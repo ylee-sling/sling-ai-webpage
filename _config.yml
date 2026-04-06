@@ -3,9 +3,7 @@ title: "SLING AI"
 description: "Symbolic Logic Inspires Non-erroneous Generative AI"
 logo: "/assets/images/company_logo.png"
 
-# URL settings (Update these when you have a domain)
-url: "https://sling.ai.kr" 
-baseurl: "/sling-ai-webpage" # This must match your repository name
+url: https://just-the-docs.github.io
 
 # Theme settings
 remote_theme: just-the-docs/just-the-docs
