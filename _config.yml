@@ -1,8 +1,26 @@
-title: Just the Docs Template
-description: A starter template for a Jeykll site using the Just the Docs theme!
-theme: just-the-docs
+# Site settings
+title: "SLING AI"
+description: "Symbolic Logic Inspires Non-erroneous Generative AI"
+logo: "/assets/images/company_logo.png"
 
-url: https://just-the-docs.github.io
+# URL settings (Update these when you have a domain)
+url: "https://sling.ai.kr" 
+baseurl: "/sling-ai-webpage" # This must match your repository name
 
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+# Theme settings
+remote_theme: just-the-docs/just-the-docs
+
+# Color Scheme
+# Leaving this as nil allows your _sass/custom/setup.scss to take full control.
+color_scheme: nil
+
+# SEO & Language
+lang: "ko-KR"
+
+# Footer Content
+last_edit_timestamp: true
+last_edit_time_format: "%b %e, %Y"
+footer_content: "Copyright © 2026 슬링에이아이 주식회사(SLING AI Inc.). All rights reserved."
+
+# Navigation settings
+nav_sort: midday
