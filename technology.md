@@ -45,9 +45,5 @@ nav_order: 3
 
 ---
 
-## 기술 적용 사례가 궁금하신가요?
 
-슬링에이아이의 기술은 단순한 시뮬레이션을 넘어 '수학적 확신'을 제공합니다.
-
-[솔루션 확인하기]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
 [대표 약력 보기]({% link representative.md %}){: .btn }
