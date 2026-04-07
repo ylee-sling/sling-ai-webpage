@@ -13,7 +13,7 @@ nav_order: 1
 ## "Symbolic Logic Inspires Non-erroneous Generative AI"
 {: .fs-6 .fw-300 }
 
-슬링에이아이 주식회사는 **기호 논리학(Symbolic Logic)**과 **형식 검증(Formal Verification)** 기술을 바탕으로, 디지털 트윈 및 생성형 AI 환경에서 신뢰할 수 있는 솔루션을 구축하는 딥테크 기업입니다.
+슬링에이아이 주식회사는 **기호 논리학(Symbolic Logic)**과 **형식 검증(Formal Verification)** 기술을 바탕으로, 디지털 트윈 및 생성형 AI 환경에서 신뢰할 수 있는 솔루션을 구축하는 회사입니다.
 
 [솔루션 보기]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
 [기술 정보]({% link technology.md %}){: .btn }
