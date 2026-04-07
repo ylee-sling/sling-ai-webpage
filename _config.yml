@@ -6,19 +6,13 @@ logo: "/assets/images/company_logo.png"
 url: https://just-the-docs.github.io
 
 # Theme settings
-remote_theme: just-the-docs/just-the-docs
+remote_theme: just-the-docs
 
-# Color Scheme
-# Leaving this as nil allows your _sass/custom/setup.scss to take full control.
-color_scheme: nil
 
-# SEO & Language
-lang: "ko-KR"
+
 
 # Footer Content
 last_edit_timestamp: true
 last_edit_time_format: "%b %e, %Y"
 footer_content: "Copyright © 2026 슬링에이아이 주식회사(SLING AI Inc.). All rights reserved."
 
-# Navigation settings
-nav_sort: midday
