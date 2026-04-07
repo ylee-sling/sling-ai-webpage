@@ -1,16 +1,19 @@
 # Site settings
 title: "SLING AI"
 description: "Symbolic Logic Inspires Non-erroneous Generative AI"
-logo: "/assets/images/company_logo.png"
 
+# 중요: 주소 설정 (양쪽 따옴표를 꼭 넣어주세요)
 url: "https://ylee-sling.github.io"
-baseurl: "/sling-ai-webpage"   
+baseurl: "/sling-ai-webpage"
 
-# Theme settings
+# 중요: 테마 설정 (remote_theme만 남기고 일반 theme: 는 삭제하세요)
 remote_theme: just-the-docs/just-the-docs
 
-# Footer Content
-last_edit_timestamp: true
-last_edit_time_format: "%b %e, %Y"
-footer_content: "Copyright © 2026 슬링에이아이 주식회사(SLING AI Inc.). All rights reserved."
+# Jekyll 설정
+plugins:
+  - jekyll-remote-theme
 
+# Just the Docs 설정
+aux_links:
+  "Just the Docs on GitHub":
+    - https://github.com/just-the-docs/just-the-docs
