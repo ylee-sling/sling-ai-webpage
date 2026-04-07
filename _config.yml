@@ -15,8 +15,8 @@ plugins:
 
 # Just the Docs 설정
 aux_links:
-  "Just the Docs on GitHub":
-    - https://github.com/just-the-docs/just-the-docs
+"Contact CEO": "mailto:ylee@sling.ai.kr" # 문구와 이메일 주소를 입력하세요
+
     
     
 exclude:
