@@ -4,6 +4,9 @@ title: Home
 nav_order: 1
 ---
 
+![SLING AI Logo]({% link assets/images/company_logo.png %}){: width="250" }
+{: .mt-4 }
+
 
 # SLING AI Inc.
 {: .fs-9 }

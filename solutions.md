@@ -1,36 +1,46 @@
 ---
+title: Solutions
 layout: default
-title: Home
-nav_order: 1
+nav_order: 2
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# Solutions
+{: .fs-9 }
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+## Logical Solutions for Industrial Safety
+{: .fs-6 .fw-300 }
 
-More specifically, the created site:
+슬링에이아이(SLING AI)는 단순한 기술 제공을 넘어, 산업 현장의 복잡한 문제를 논리적으로 정의하고 수학적으로 해결합니다. 
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+---
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+## 1. AX (AI Transformation) 컨설팅
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+AI 도입은 단순히 기술을 적용하는 것이 아니라, 기업의 의사결정 구조를 최적화하는 과정입니다. 슬링에이아이는 **논리적 근거**에 기반한 안정적인 AI 전환 전략을 제안합니다.
 
-To get started with creating a site, simply:
+* **비즈니스 프로세스 최적화**: 기업 내부 데이터와 업무 흐름을 분석하여 AI 도입 시 기대효과가 가장 큰 영역을 발굴합니다.
+* **안정적인 시스템 통합(SI) 자문**: AI 모델이 기존 인프라와 충돌 없이 작동할 수 있도록 논리적 설계를 지원합니다.
+* **리스크 관리 및 검증**: 생성형 AI의 환각(Hallucination) 현상이나 오류를 최소화하기 위한 검증 가이드라인을 제공합니다.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+---
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+## 2. 산업용 AI 검증 솔루션 (G-code Verification)
 
-----
+CNC 가공 현장에서의 충돌 사고는 막대한 비용 손실과 인명 피해로 이어집니다. 슬링에이아이는 **G-코드(CNC 가공 프로그램)**의 안전성을 물리적 시뮬레이션을 넘어 **수학적으로 증명**하는 고신뢰성 소프트웨어를 제공합니다.
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+### 주요 특징
+* **무결성 증명**: 프로그램 실행 전, 모든 물리적 경로에서의 충돌 가능성을 0%로 검증합니다.
+* **디지털 트윈 통합**: 실제 가공 환경을 디지털 공간에 매핑하여 정밀한 자원 점유 상태를 계산합니다.
+* **실시간 재검증**: 프레임 규칙(Frame Rule) 기술을 통해 작업 환경의 변화가 있을 때 전체가 아닌 변경된 부분만 빠르게 재검증합니다.
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+> **Why High-Reliability?**
+> 일반적인 시뮬레이션은 샘플링된 구간만 검사하지만, 슬링에이아이의 솔루션은 기호 논리를 통해 **모든 연속적인 공간에 대한 안전성을 수학적으로 담보**합니다.
+
+---
+
+## 솔루션 도입 문의
+
+슬링에이아이의 기술력은 정밀 제조, 항공우주, 의료 장비 등 고도의 안전성이 필요한 모든 분야에 적용될 수 있습니다.
+
+[기술 상세 보기]({% link technology.md %}){: .btn .btn-blue .mr-2 }
+[문의하기]({% link company.md %}){: .btn }

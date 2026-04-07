@@ -1,36 +1,53 @@
 ---
+title: Technology
 layout: default
-title: Home
-nav_order: 1
+nav_order: 3
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+# Technology
+{: .fs-9 }
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+## Formal Verification based on Symbolic Logic
+{: .fs-6 .fw-300 }
 
-More specifically, the created site:
+슬링에이아이는 소프트웨어의 동작을 수학적으로 모델링하고, 모든 실행 경로에서 오류가 없음을 증명하는 **형식 검증(Formal Verification)** 기술을 핵심 역량으로 보유하고 있습니다.
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+---
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+## 1. 분리 논리(Separation Logic) 기반 검증
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+우리는 복잡한 물리적 자원을 관리하기 위해 컴퓨터 과학의 **분리 논리(Separation Logic)**를 산업용 도메인에 적용했습니다.
 
-To get started with creating a site, simply:
+* **자원 모델링**: 물리적 좌표 공간과 기계 부품을 메모리의 힙(Heap) 구조로 매핑하여 논리적으로 정의합니다.
+* **사전/사후 조건 정의**: G-코드의 각 명령줄이 실행되기 전과 후의 상태를 **Separation Logic Formula**로 정의하여, 자원 간의 간섭(충돌) 여부를 수학적으로 판정합니다.
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+## 2. 효율적인 재검증: 프레임 규칙(Frame Rule)
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+슬링에이아이 기술의 핵심 차별점은 **경제적인 재검증**에 있습니다.
 
-----
+* **국소적 추론**: 프레임 규칙을 활용하여, 전체 시스템 중 '변경된 자원'과 관련된 부분만 독립적으로 검증합니다.
+* **성능 최적화**: 미세한 수정이 빈번한 가공 현장에서 전체 코드를 다시 검사할 필요 없이, 수정된 경로의 안전성만 빠르게 재입증하여 실시간성을 확보합니다.
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+## 3. 정밀 공간 연산 알고리즘
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+물리적 충돌을 완벽히 계산하기 위해 고난도의 수리 기하학 알고리즘을 결합하였습니다.
+
+* **스윕 볼륨(Sweep Volume)**: 공구가 이동하며 점유하는 모든 연속적인 궤적을 볼륨 데이터로 산출합니다.
+* **민코프스키 합(Minkowski Sum)**: 복잡한 형상의 공구와 공작물 간의 최소 거리를 계산하여 물리적 여유 공간을 정밀하게 확보합니다.
+* **정리 증명기(Theorem Prover)**: 계산된 모든 기하학적 수치를 논리식으로 변환하여 최종적으로 '충돌 없음'을 수학적으로 증명합니다.
+
+---
+
+## 특허 및 기술 자산
+
+* **특허 출원**: 디지털 트윈 환경에서 분리 논리를 이용한 CNC 가공 프로그램 충돌 검증
+* **핵심 기술**: G-코드 논리식 변환기, 리소스 분리 가능성 증명 엔진, 산업용 디지털 트윈 매핑 인터페이스
+
+---
+
+## 기술 적용 사례가 궁금하신가요?
+
+슬링에이아이의 기술은 단순한 시뮬레이션을 넘어 '수학적 확신'을 제공합니다.
+
+[솔루션 확인하기]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
+[대표 약력 보기]({% link representative.md %}){: .btn }
