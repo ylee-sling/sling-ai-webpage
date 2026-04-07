@@ -4,33 +4,47 @@ title: Home
 nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+# SLING AI Inc.
+{: .fs-9 }
 
-More specifically, the created site:
+## "Symbolic Logic Inspires Non-erroneous Generative AI"
+{: .fs-6 .fw-300 }
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+슬링에이아이(주)는 엄밀한 **기호 논리학(Symbolic Logic)**과 **형식 검증(Formal Verification)** 기술을 바탕으로, 디지털 트윈 및 생성형 AI 환경에서 오류 없는(Non-erroneous) 솔루션을 구축하는 딥테크 기업입니다.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+[솔루션 보기]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
+[기술 정보]({% link technology.md %}){: .btn }
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+---
 
-To get started with creating a site, simply:
+## 핵심 비전 (Core Vision)
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+현대의 AI와 디지털 트윈 기술은 비약적으로 발전하고 있으나, 여전히 '신뢰성'과 '안전성'이라는 숙제를 안고 있습니다. 슬링에이아이는 수학적 증명 기법을 도입하여 복잡한 시스템의 오류를 사전에 차단하고, 산업 현장에서 믿고 사용할 수 있는 고신뢰성 지능형 소프트웨어를 제공합니다.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+### 주요 소식
+* **2026. 02. 19** | 슬링에이아이 주식회사 법인 설립
+* **2026. 02** | 디지털 트윈 환경 내 CNC 가공 프로그램 충돌 검증 특허 출원 완료
 
-----
+---
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+## 주요 역량 (Key Capabilities)
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+| 핵심 기술 | 설명 |
+| :--- | :--- |
+| **기호 논리 기반 AI** | 논리적 근거에 기반하여 추론 과정의 투명성과 정확성을 보장합니다. |
+| **형식 검증 솔루션** | 소프트웨어 실행 전, 수학적 모델링을 통해 물리적 충돌 및 오류 가능성을 100% 검증합니다. |
+| **AX 컨설팅** | 기업의 비즈니스 프로세스를 분석하여 최적의 AI 도입 전략(AI Transformation)을 제안합니다. |
+
+---
+
+## 왜 슬링에이아이인가?
+
+1.  **수학적 엄밀함**: 단순한 확률 기반 예측을 넘어, 분리 논리(Separation Logic)를 이용해 시스템의 안전성을 정리 증명기로 검증합니다.
+2.  **산업 현장 최적화**: CNC 가공 등 정밀한 안전이 요구되는 제조 현장에 즉시 적용 가능한 실질적인 솔루션을 보유하고 있습니다.
+3.  **글로벌 전문성**: 나고야 대학교 정보학 박사 출신의 전문가를 필두로, 글로벌 수준의 계산 이론 및 자동 추론 기술력을 갖추고 있습니다.
+
+---
+
+[대표 소개]({% link representative.md %}){: .btn .btn-outline }
+[문의하기]({% link company.md %}){: .btn .btn-outline }
