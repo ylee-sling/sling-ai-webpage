@@ -3,13 +3,11 @@ title: "SLING AI"
 description: "Symbolic Logic Inspires Non-erroneous Generative AI"
 logo: "/assets/images/company_logo.png"
 
-url: https://ylee-sling.github.io/sling-ai-webpage
+url: "https://ylee-sling.github.io"
+baseurl: "/sling-ai-webpage"   
 
 # Theme settings
-remote_theme: just-the-docs
-
-
-
+remote_theme: just-the-docs/just-the-docs
 
 # Footer Content
 last_edit_timestamp: true
