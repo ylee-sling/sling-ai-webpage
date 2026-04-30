@@ -60,4 +60,3 @@ nav_order: 5
 슬링에이아이의 비전과 기술력에 대해 더 궁금하시다면 아래 페이지를 확인해 주세요.
 
 [홈으로 돌아가기]({% link index.md %}){: .btn .btn-blue .mr-2 }
-[핵심 기술 보기]({% link technology.md %}){: .btn }

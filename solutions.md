@@ -43,5 +43,4 @@ nav_order: 2
 
 슬링에이아이의 기술은 정밀 제조, 항공우주, 의료 장비 등 **단 한 번의 AI 환각이나 기계 오류도 허용되지 않는** 모든 분야에 적용됩니다.
 
-[기술 상세 보기]({% link technology.md %}){: .btn .btn-blue .mr-2 }
 [문의하기]({% link company.md %}){: .btn }

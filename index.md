@@ -17,7 +17,6 @@ nav_order: 1
 슬링에이아이(SLING AI)는 똑똑하지만 가끔 엉뚱한 대답을 하는 AI가 **정해진 규칙을 벗어나지 않도록 잡아주는 기술**을 만듭니다. 우리는 기호 논리(Symbolic Logic)를 바탕으로, AI가 산업 현장에서 안전하게 쓰일 수 있도록 돕는 회사입니다.
 
 [솔루션 보기]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
-[기술 정보]({% link technology.md %}){: .btn }
 
 ---
 

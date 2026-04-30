@@ -84,5 +84,4 @@ nav_order: 4
 
 ---
 
-[슬링에이아이 기술력 보기]({% link technology.md %}){: .btn .btn-blue .mr-2 }
 [기업 정보 확인]({% link company.md %}){: .btn }
