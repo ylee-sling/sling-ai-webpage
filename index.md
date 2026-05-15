@@ -10,9 +10,6 @@ nav_order: 1
 ## "Symbolic Logic Inspires Non-erroneous Generative AI"
 {: .fs-6 .fw-300 }
 
-## "Creating AI You Can Trust"
-### Building AI Safety Guardrails with Logic
-{: .fs-6 .fw-300 }
 
 SLING AI develops technology that **prevents AI from deviating from predefined rules**, ensuring reliability even when dealing with unpredictable generative models. Based on Symbolic Logic, we empower industries to deploy AI safely in mission-critical environments.
 
@@ -27,7 +24,9 @@ While modern Large Language Models (LLMs) are highly capable, they often suffer 
 SLING AI cross-references AI outputs with "logical ground truths" (Symbolic Logic), allowing **only mathematically proven safe responses** to pass through. This enables industries to integrate AI into their core operations with absolute confidence.
 
 ### Latest News
-**Feb. 2026** | Patent filed for technology to prevent precision machinery collisions (Based on Formal Verification).
+**May 2026** | Two provisional patents filed for concurrent multi-tool verification and Neuro-Symbolic G-code generation.
+**May 2026** | Two preprints published on arXiv detailing the mathematical foundations of G-code safety and logic-based verification.
+**Feb. 2026** | Formal patent filed for technology to prevent precision machinery collisions (Based on Formal Verification).
 
 ---
 

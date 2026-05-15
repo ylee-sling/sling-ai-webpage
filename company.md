@@ -7,8 +7,6 @@ nav_order: 5
 # Company
 {: .fs-9 }
 
-## Trust through Formal Verification and Integrity
-{: .fs-6 .fw-300 }
 
 SLING AI Inc. ensures the safety of future industries through transparent operations and advanced technology, enhancing AI reliability via symbolic logic and formal methods.
 {: .fs-6 .fw-300 }
@@ -19,7 +17,7 @@ SLING AI Inc. ensures the safety of future industries through transparent operat
 
 | Category | Details |
 | :--- | :--- |
-| **Company Name** | SLING AI Inc. |
+| **Company Name** | SLING AI Inc. (슬링에이아이 주식회사) |
 | **CEO & Founder** | Yeonseok Lee, Ph.D. |
 | **Date of Incorporation** | February 9, 2026 |
 | **Phone** | +82 10-2158-9243 |
@@ -43,8 +41,8 @@ SLING AI drives innovation across information technology and professional techni
 
 ## Registration Information
 
-* **Business Registration Number**: 399-88-03360
-* **Corporate Registration Number**: 120111-0151637
+* **Business Registration Number (사업자등록번호)**: 399-88-03360
+* **Corporate Registration Number (법인등록번호)**: 120111-0151637
 
 ---
 
