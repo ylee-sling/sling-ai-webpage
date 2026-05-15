@@ -19,7 +19,7 @@ nav_order: 4
 <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px;">
   <img src="{% link assets/images/ceo_pic.JPG %}" alt="Yeonseok Lee, CEO" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <div>
-    <h3 style="margin-top: 0;">Yeonseok Lee (李 淵錫), Ph.D.</h3>
+    <h3 style="margin-top: 0;">Yeonseok Lee (이 연석, 李 淵錫), Ph.D.</h3>
     <p>Founder & CEO of SLING AI Inc.</p>
     <p><strong>Research & Areas of Expertise</strong><br>
     Theory of Computation, Symbolic Logic, Separation Logic, Program Verification, Automated Reasoning, Concurrency</p>
