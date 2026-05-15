@@ -7,40 +7,53 @@ nav_order: 2
 # Solutions
 {: .fs-9 }
 
-## 산업 현장의 안전을 지키는 논리적 해결책
-### Logical Solutions for Industrial Safety
+## Logical Solutions for Industrial Safety
 {: .fs-6 .fw-300 }
 
-슬링에이아이(SLING AI)는 산업 현장의 복잡한 문제를 수학적 논리로 정의하고 해결하려고 합니다.
+SLING AI defines and solves complex industrial challenges through the lens of mathematical logic, ensuring that high-stakes automation remains reliable and error-free.
 
 ---
 
-## 1. 가공 기계 간 충돌 방지 솔루션 (G-code Verification)
+## 1. G-code Collision Prevention & Generation
+{: .fs-8 }
 
-공장에서 기계를 돌리는 프로그램이 잘못되면 기계끼리 부딪히는 큰 사고가 납니다. 슬링에이아이는 단순히 "눈으로 보는 시뮬레이션"을 넘어, **기계가 충돌할 가능성을 수학적으로 증명(Formal Verification)**하는 안전 소프트웨어를 제공합니다.
+In precision manufacturing, a single error in a machine's program can lead to catastrophic collisions. SLING AI goes beyond traditional "visual simulations" by providing safety software that **mathematically proves the absence of collision risks (Formal Verification)**.
 
-### 주요 특징
-* **사고 가능성 알람**: 기계가 움직이기 전, 모든 경로를 수학적으로 계산해 충돌 가능성이 조금이라도 있다면, 알람을 제공합니다.
-* **디지털 트윈 모델링**: 실제 공장 환경을 컴퓨터 속에 복제(Digital Twin)하여 정밀하게 계산합니다.
-* **부분 재검토**: 기계 위치가 살짝 바뀌었을 때 전체를 다시 계산할 필요 없이, 바뀐 부분만 빠르게 다시 확인(Frame Rule 기술)합니다.
+### Core Technologies & Intellectual Property (IP)
+Our solutions are powered by proprietary research and patented architectures:
 
-> **왜 슬링에이아이의 검증이 더 안전한가요?**
-> 일반적인 검사는 몇몇 장면만 골라서 확인하지만, 슬링에이아이는 기호 논리(Symbolic Logic)를 통해 **기계가 움직이는 지정된 모든 찰나의 순간에 안전한지 수학적으로 검증**합니다.
+* **Separation Logic-based G-code Collision Pre-verification**
+    * **The Tech**: A first-of-its-kind technology that mathematically verifies that toolpaths do not overlap with prohibited zones by applying 'Separation Logic' to G-code analysis.
+    * **Status**: Formal patent filed (Feb 2026); Provisional patent for concurrent multi-tool verification filed (May 2026).
+    * **Publication**: [Preprint (DOI): 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437)
+
+* **Neuro-Symbolic G-code Generation & Verification Architecture**
+    * **The Tech**: A hybrid architecture that combines LLM-based G-code generation with our separation logic-based prover to ensure that AI-generated codes are both efficient and 100% safe.
+    * **Status**: Provisional patent filed (May 2026).
+    * **Publication**: [Preprint (DOI): 10.48550/arXiv.2605.10568](https://doi.org/10.48550/arXiv.2605.10568)
+
+### Key Features
+* **Collision Alerts**: Before a machine moves, every path is calculated mathematically. If there is even a marginal risk of collision, an alert is triggered immediately.
+* **High-Fidelity Digital Twin**: We replicate the actual factory environment into a digital twin for precise, physics-aware calculations.
+* **Incremental Verification (Frame Rule)**: When minor changes occur in the machine's position, our system uses "Frame Rule" logic to re-verify only the affected parts, significantly reducing computation time.
+
+> **Why is SLING AI’s verification safer?**
+> Standard checks often rely on sampling specific points in a simulation. In contrast, SLING AI uses **Symbolic Logic** to verify safety for **every infinitesimal moment** of the machine's movement.
 
 ---
 
-## 2. 안전한 AI 도입(AX) 컨설팅
+## 2. Secure AI Transformation (AX) Consulting
 
-우리 회사에 AI를 들여오고 싶지만, AI가 엉뚱한 대답을 하는 **환각(Hallucination)** 현상 때문에 망설여지시나요? 슬링에이아이는 **논리적 근거**를 바탕으로 가장 안정적인 AI 전환 전략을 제안합니다.
+Are you hesitant to integrate AI due to the risk of "hallucinations" or unpredictable outputs? SLING AI provides a strategic roadmap for AI Transformation (AX) based on **rigorous logical foundations**.
 
-* **비즈니스 흐름 최적화**: 우리 회사의 업무 중 어디에 AI를 넣어야 가장 효과적이고 안전할지 분석합니다.
-* **논리적 시스템 설계**: AI가 기존 업무 시스템과 충돌하지 않고 '가드레일' 안에서만 작동하도록 설계합니다.
-* **환각 및 리스크 관리**: 생성형 AI가 지어낸 거짓말(환각)을 걸러내고, 업무에 바로 쓸 수 있는 믿을 만한 결과만 나오도록 검증 가이드를 제공합니다.
+* **Business Flow Optimization**: We analyze your operations to identify where AI integration is most effective and safest.
+* **Logical System Design**: We design systems where AI operates strictly within "guardrails," ensuring it never conflicts with existing legacy protocols.
+* **Hallucination & Risk Management**: We provide verification guides to filter out AI-generated falsehoods, ensuring only high-fidelity, actionable data reaches your production line.
 
 ---
 
-## 솔루션 도입 문의
+## Inquiries
 
-슬링에이아이의 기술은 정밀 제조, 항공우주, 의료 장비 등 **단 한 번의 AI 환각이나 기계 오류도 허용되지 않는** 모든 분야에 적용됩니다.
+SLING AI’s technologies are designed for sectors where even a single AI hallucination or mechanical error is unacceptable—including **precision manufacturing, aerospace, and medical devices.**
 
-[문의하기]({% link company.md %}){: .btn }
+[Contact Us]({% link company.md %}){: .btn }

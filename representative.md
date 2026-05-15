@@ -7,65 +7,72 @@ nav_order: 4
 # Representative
 {: .fs-9 }
 
+## CEO's Message
 
+> "I am convinced that modern, complex industrial manufacturing systems require more than just probabilistic AI; they require mathematically proven AI. SLING AI aims to build a world of high-integrity AI by integrating symbolic logic into the industrial field."
 
-## 인사말
-
-> "현대의 복잡한 제조 산업 시스템은 단순한 확률 기반의 AI를 넘어, 수학적으로 증명된 AI를 필요로 한다고 생각합니다. 슬링에이아이는 기호 논리학을 산업 현장에 녹여내어, 고신뢰성 AI 세상을 만들어가겠습니다."
 
 ---
 
-## 대표 프로필
+## CEO Profile
 
 <div style="display: flex; align-items: flex-start; gap: 20px; margin-bottom: 30px;">
-  <img src="{% link assets/images/ceo_pic.JPG %}" alt="이연석 대표" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <img src="{% link assets/images/ceo_pic.JPG %}" alt="Yeonseok Lee, CEO" width="200" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
   <div>
-    <h3 style="margin-top: 0;">이연석 (Yeonseok Lee, 李 淵錫) 박사</h3>
-    <p>슬링에이아이 주식회사 대표이사</p>
-    <p><strong>연구 및 전문 분야</strong><br>
-    계산 이론, 기호 논리, 분리 논리(Separation Logic), 프로그램 검증, 자동 추론, 동시성(Concurrency)</p>
-    <p><strong>보유 기술</strong><br>
-    C언어, 한국어(Native), 영어(Fluent), 일본어(Fluent, JLPT N1)</p>
+    <h3 style="margin-top: 0;">Yeonseok Lee (李 淵錫), Ph.D.</h3>
+    <p>Founder & CEO of SLING AI Inc.</p>
+    <p><strong>Research & Areas of Expertise</strong><br>
+    Theory of Computation, Symbolic Logic, Separation Logic, Program Verification, Automated Reasoning, Concurrency</p>
+    <p><strong>Skills & Languages</strong><br>
+    C, Korean (Native), English (Fluent), Japanese (Fluent, JLPT N1)</p>
   </div>
 </div>
 
 ---
 
-### 학력 (Education)
+### Education
 
-| 기간 | 학교 및 전공 | 학위 |
+| Period | Institution | Degree |
 | :--- | :--- | :--- |
-| **2023 - 2026** | **Nagoya University** 정보학 | 박사 (Ph.D. in Informatics) |
-| **2021 - 2023** | **Nagoya University** 정보학 | 석사 (M.S. in Informatics) |
-| **2015 - 2021** | **한양대학교** 정보시스템학 | 학사 (B.S. in Information System) |
-| **2012 - 2015** | **원주고등학교** | 졸업 |
+| **2023 - 2026** | **Nagoya University** Informatics | Doctor of Informatics |
+| **2021 - 2023** | **Nagoya University** Informatics | Master of Informatics |
+| **2015 - 2021** | **Hanyang University** Information Systems | B.S. in Information Systems |
+| **2012 - 2015** | **Wonju High School** | Graduated |
 
-#### [학위 논문 확인 방법]
-* **논문명**: Theoretical Studies of Program Verification Based on Separation Logic (분리 논리에 기반한 프로그램 검증에 관한 이론적 연구)
-* **조회 방법**:
-  1. [외국박사학위 종합시스템(한국연구재단)](https://dr.nrf.re.kr/) 접속
-  2. 우측 초록색 **[논문검색]** 버튼 클릭
-  3. 저자명에 **'이연석'** 입력 후 검색
-
----
-
-### 주요 경력
-
-**2026. 02 - 현재** | **슬링에이아이 주식회사**, 대표이사
-**2025. 04 - 2025. 12** | **NTT DATA TOKAI Corporation** (일본 나고야), 시스템 엔지니어
-**2017. 02 - 2019. 02** | **대한민국 공군** 제11전투비행단, 항공무기정비사 (병장 만기전역)
+#### [How to Find Dissertation]
+* **Title**: Theoretical Studies of Program Verification Based on Separation Logic
+* **Search Instructions**:
+  1. Access the [National Research Foundation (NRF) Foreign Doctoral Dissertation System](https://dr.nrf.re.kr/)
+  2. Click the green **[Thesis Search (논문검색)]** button on the right.
+  3. Enter **'이연석'** (Yeonseok Lee) in the author field and search.
 
 ---
 
-### 주요 수상 경력
+### Professional Career
 
-**2025** | 일본 정보처리학회(IPSJ) 컴퓨터 과학 분야 장려상
-**2022** | 일본 소프트웨어 과학회(JSSST) 우수 발표상
-**2022** | 일본 소프트웨어 과학회(JSSST) 학생 장려상
+**Feb. 2026 - Present** | **SLING AI Inc.**, Founder & CEO
+**Apr. 2025 - Dec. 2025** | **NTT DATA TOKAI Corporation** (Nagoya, Japan), System Engineer
+**Feb. 2017 - Feb. 2019** | **Republic of Korea Air Force** 11th Fighter Wing, Aviation Weapons Maintenance Technician (Sergeant, Honorable Discharge)
 
 ---
 
-### 주요 논문 (Selected Publications)
+### Awards & Honors
+
+**2025** | Encouragement Award in Computer Science, Information Processing Society of Japan (IPSJ)
+**2022** | Best Presentation Award, Japan Society for Software Science and Technology (JSSST)
+**2022** | Student Encouragement Award, Japan Society for Software Science and Technology (JSSST)
+
+---
+
+### Selected Publications
+
+**2026** | **Separation Logic for Verifying Physical Collisions of CNC Programs**
+  * Preprint (arXiv)
+  * [DOI: 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437)
+
+**2026** | **Correct-by-Construction G-Code Generation: A Neuro-Symbolic Approach via Separation Logic**
+  * Preprint (arXiv)
+  * [DOI: 10.48550/arXiv.2605.10568](https://doi.org/10.48550/arXiv.2605.10568)
 
 **2025** | **Incorrectness separation logic with arrays and pointer arithmetic**
   * Journal of Information Processing, Vol. 33.
@@ -78,10 +85,7 @@ nav_order: 4
 **2023** | **Decidable entailment checking for concurrent separation logic with fractional permissions**
   * Computer Software, Vol. 40, Issue 4.
   * [DOI: 10.11309/jssst.40.4_67](https://doi.org/10.11309/jssst.40.4_67)
-  
-
-
 
 ---
 
-[기업 정보 확인]({% link company.md %}){: .btn }
+[View Corporate Information]({% link company.md %}){: .btn }

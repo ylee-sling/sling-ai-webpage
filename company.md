@@ -10,53 +10,54 @@ nav_order: 5
 ## Trust through Formal Verification and Integrity
 {: .fs-6 .fw-300 }
 
-슬링에이아이 주식회사는 투명한 기업 운영과 기술력을 바탕으로 미래 산업의 안전을 지향합니다.
+SLING AI Inc. ensures the safety of future industries through transparent operations and advanced technology, enhancing AI reliability via symbolic logic and formal methods.
 {: .fs-6 .fw-300 }
 
 ---
 
-## 기업 정보 (Corporate Overview)
+## Corporate Overview
 
-| 항목 | 상세 내용 |
+| Category | Details |
 | :--- | :--- |
-| **법인명** | 슬링에이아이 주식회사 (SLING AI Inc.) |
-| **대표자** | 이연석 |
-| **회사성립연월일** | 2026년 2월 9일 |
-| **대표전화** | 010-2158-9243 |
-| **이메일** | [ylee@sling.ai.kr](mailto:ylee@sling.ai.kr) |
-| **공식 홈페이지** | [sling.ai.kr](https://www.sling.ai.kr) |
+| **Company Name** | SLING AI Inc. |
+| **CEO & Founder** | Yeonseok Lee, Ph.D. |
+| **Date of Incorporation** | February 9, 2026 |
+| **Phone** | +82 10-2158-9243 |
+| **Email** | [ylee@sling.ai.kr](mailto:ylee@sling.ai.kr) |
+| **Official Website** | [sling.ai.kr](https://www.sling.ai.kr) |
 
 ---
 
-## 사업 분야 (Business Category)
+## Business Category
 
-슬링에이아이는 정보통신 및 전문 기술 서비스 분야에서 혁신을 목표로 합니다.
+SLING AI drives innovation across information technology and professional technical services.
 
-* **업태**: 정보통신업, 전문·과학 및 기술서비스업
-* **종목**: 
-    * 시스템 소프트웨어 개발 및 공급업
-    * 컴퓨터 시스템 통합 자문 및 구축 서비스업
-    * 경영 컨설팅업 (AI Transformation)
-
----
-
-## 등록 정보 (Registration)
-
-* **사업자등록번호**: 399-88-03360
-* **법인등록번호**: 120111-0151637
+* **Industry**: Information and Communications; Professional, Scientific, and Technical Services
+* **Business Type**: 
+    * Intellectual Property (IP) Licensing and Implementation Consulting
+    * System Software Development and Supply
+    * Computer Systems Integration Consulting and Establishment Services
+    * Management Consulting (AI Transformation)
 
 ---
 
-## 오시는 길 (Location)
+## Registration Information
 
-**주소**: 인천광역시 남동구 은청로 18, 3층 305호 일부 3비호 (고잔동, 남동상공센타)
-
-슬링에이아이는 남동국가산업단지의 중심에서 제조 현장의 디지털 및 AI 혁신을 함께 고민하고 있습니다. 방문 상담이 필요하신 경우 언제든지 전화 또는 이메일로 연락을 부탁드립니다.
+* **Business Registration Number**: 399-88-03360
+* **Corporate Registration Number**: 120111-0151637
 
 ---
 
-## 더 알아보기
+## Location
 
-슬링에이아이의 비전과 기술력에 대해 더 궁금하시다면 아래 페이지를 확인해 주세요.
+**Address**: Unit 3B, Room 305, 3rd Floor, 18 Euncheong-ro, Namdong-gu, Incheon, Republic of Korea (Gojan-dong, Namdong Business Center)
 
-[홈으로 돌아가기]({% link index.md %}){: .btn .btn-blue .mr-2 }
+Based in the Namdong National Industrial Complex, SLING AI leads AI innovation for the manufacturing sector. Please contact us via phone or email for consultations or visits.
+
+---
+
+## Learn More
+
+To learn more about the vision and technology of SLING AI, please visit the page below.
+
+[Back to Home]({% link index.md %}){: .btn .btn-blue .mr-2 }

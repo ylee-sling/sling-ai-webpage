@@ -2,22 +2,20 @@
 title: "SLING AI"
 description: "Symbolic Logic Inspires Non-erroneous Generative AI"
 
-# 중요: 주소 설정 (양쪽 따옴표를 꼭 넣어주세요)
+# Important: URL settings (Please make sure to use double quotes)
 url: "https://ylee-sling.github.io"
 baseurl: "/sling-ai-webpage"
 
-# 중요: 테마 설정 (remote_theme만 남기고 일반 theme: 는 삭제하세요)
+# Important: Theme settings (Keep only remote_theme and delete the regular theme: entry)
 remote_theme: just-the-docs/just-the-docs
 
-# Jekyll 설정
+# Jekyll settings
 plugins:
   - jekyll-remote-theme
 
-# Just the Docs 설정
+# Just the Docs settings
 aux_links:
-"Contact CEO": "mailto:ylee@sling.ai.kr" # 문구와 이메일 주소를 입력하세요
+  "Contact CEO": "mailto:ylee@sling.ai.kr" # Enter the label and email address
 
-    
-    
 exclude:
   - README.md
