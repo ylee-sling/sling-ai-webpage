@@ -52,7 +52,7 @@ nav_order: 4
 
 **Feb. 2026 - Present** | **SLING AI Inc.**, Founder & CEO
 **Apr. 2025 - Dec. 2025** | **NTT DATA TOKAI Corporation** (Nagoya, Japan), System Engineer
-**Feb. 2017 - Feb. 2019** | **Republic of Korea Air Force** 11th Fighter Wing, Aviation Weapons Maintenance Technician (Sergeant, Honorable Discharge)
+**Feb. 2017 - Feb. 2019** | **Republic of Korea Air Force** 11th Fighter Wing, Aviation Weapons Maintenance Technician (Staff Sergeant / 공군 병장, Honorable Discharge / 만기 전역)
 
 ---
 
