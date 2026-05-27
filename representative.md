@@ -46,6 +46,8 @@ nav_order: 4
   1. Access the [National Research Foundation (NRF) Foreign Doctoral Dissertation System](https://dr.nrf.re.kr/)
   2. Click the green **[Thesis Search (논문검색)]** button on the right.
   3. Enter **'이연석'** (Yeonseok Lee) in the author field and search.
+  
+  
 ---
 
 ### Professional Career
