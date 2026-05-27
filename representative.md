@@ -41,7 +41,8 @@ nav_order: 4
 
 #### [How to Find Dissertation]
 * **Title**: Theoretical Studies of Program Verification Based on Separation Logic
-* **Search Instructions**:
+* **Direct Link**: [Nagoya University Repository (HDL)] (http://hdl.handle.net/2237/0002014421)
+* **Alternative Search Instructions**:
   1. Access the [National Research Foundation (NRF) Foreign Doctoral Dissertation System](https://dr.nrf.re.kr/)
   2. Click the green **[Thesis Search (논문검색)]** button on the right.
   3. Enter **'이연석'** (Yeonseok Lee) in the author field and search.

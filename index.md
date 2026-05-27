@@ -7,11 +7,11 @@ nav_order: 1
 ![SLING AI Logo]({% link assets/images/company_logo.png %}){: width="250" }
 {: .mt-4 }
 
-## "Symbolic Logic Inspires Non-erroneous Generative AI"
+## "Separation Logic Inspires Non-erroneous Generative AI"
 {: .fs-6 .fw-300 }
 
 
-SLING AI develops technology that **prevents AI from deviating from predefined rules**, ensuring reliability even when dealing with unpredictable generative models. Based on Symbolic Logic, we empower industries to deploy AI safely in mission-critical environments.
+SLING AI develops technology that **prevents AI from deviating from predefined rules**, ensuring reliability even when dealing with unpredictable generative models. Based on Separation Logic, we empower industries to deploy AI safely in mission-critical environments.
 
 [View Solutions]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
 
@@ -21,7 +21,7 @@ SLING AI develops technology that **prevents AI from deviating from predefined r
 
 While modern Large Language Models (LLMs) are highly capable, they often suffer from **hallucinations**—generating plausible but false information. In everyday conversation, this might be harmless, but in **manufacturing, a single AI hallucination can lead to equipment damage or serious safety accidents.**
 
-SLING AI cross-references AI outputs with "logical ground truths" (Symbolic Logic), allowing **only mathematically proven safe responses** to pass through. This enables industries to integrate AI into their core operations with absolute confidence.
+SLING AI cross-references AI outputs with "logical ground truths" (Separation Logic), allowing **only mathematically proven safe responses** to pass through. This enables industries to integrate AI into their core operations with absolute confidence.
 
 ### Latest News
 **May 2026** | Two provisional patents filed for concurrent multi-tool verification and Neuro-Symbolic G-code generation.
