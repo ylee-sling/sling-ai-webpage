@@ -25,7 +25,9 @@ SLING AI cross-references AI outputs with "logical ground truths" (Separation Lo
 
 ### Latest News
 **May 2026** | Two provisional patents filed for concurrent multi-tool verification and Neuro-Symbolic G-code generation.
+
 **May 2026** | Two preprints published on arXiv detailing the mathematical foundations of G-code safety and logic-based verification.
+
 **Feb. 2026** | Formal patent filed for technology to prevent precision machinery collisions (Based on Formal Verification).
 
 ---
