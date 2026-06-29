@@ -24,6 +24,8 @@ While modern Large Language Models (LLMs) are highly capable, they often suffer 
 SLING AI cross-references AI outputs with "logical ground truths" (Separation Logic), allowing **only mathematically proven safe responses** to pass through. This enables industries to integrate AI into their core operations with absolute confidence.
 
 ### Latest News
+
+
 **May 2026** | Two provisional patents filed for concurrent multi-tool verification and Neuro-Symbolic G-code generation.
 
 **May 2026** | Two preprints published on arXiv detailing the mathematical foundations of G-code safety and logic-based verification.

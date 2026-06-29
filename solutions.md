@@ -32,7 +32,7 @@ Our solutions are powered by proprietary research and patented architectures:
     * **Publication**: [Preprint (DOI): 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437)
 
 * **Neuro-Symbolic G-code Generation & Verification Architecture**
-    * **The Tech**: A hybrid architecture that combines LLM-based G-code generation with our separation logic-based prover to ensure that AI-generated codes are both efficient and 100% safe.
+    * **The Tech**: A hybrid architecture that combines LLM-based G-code generation with our separation logic-based prover to ensure that AI-generated codes are safe.
     * **Status**: 
         * Korean Patent Application Filed (May 2026, App No. 10-2026-0083867; Provisional Specification)
         * Korean Patent Application Filed (May 2026, App No. 10-2026-0090306; Provisional Specification)
