@@ -19,6 +19,3 @@ aux_links:
 
 exclude:
   - README.md
-  
-mermaid:
-  version: "10.9.1"

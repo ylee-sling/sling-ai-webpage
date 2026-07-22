@@ -31,7 +31,8 @@ Our solutions are powered by proprietary research, patent-pending architectures,
   * **Status**: Korean Patent Application Filed (Provisional Specification)
   * **Publication**: ["Separation Logic for Memory Conflict Detection in High-Level Synthesis" (Preprint DOI: 10.48550/arXiv.2607.07126)](https://doi.org/10.48550/arXiv.2607.07126)
 
-```mermaid
+
+<div class="mermaid">
 flowchart TD
     A["Concurrent LLVM IR Memory Accesses"] --> B["Spatial Verification Engine<br/><i>(Separation Logic)</i>"]
     
@@ -46,3 +47,11 @@ flowchart TD
     style B fill:#e9ecef,stroke:#495057,stroke-width:2px
     style E fill:#d4edda,stroke:#28a745,stroke-width:2px
     style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+</div>
+
+<script type="module">
+  import mermaid from '[https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs](https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs)';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
+

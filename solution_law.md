@@ -23,7 +23,8 @@ Our solutions are powered by proprietary research, patent-pending architectures,
 
 Our system transforms raw legal records into verified summary indictment documents through a clear 5-step pipeline:  
 
-```mermaid
+
+<div class="mermaid">
 flowchart LR
     A["📄 Raw Legal Docs"] --> B["1. OCR & Parsing"]
     B --> C["2. LLM Fact Extraction"]
@@ -36,3 +37,10 @@ flowchart LR
     style D fill:#cce5ff,stroke:#004085,stroke-width:2px
     style E fill:#d4edda,stroke:#155724,stroke-width:2px
     style F fill:#e2e3e5,stroke:#383d41,stroke-width:2px
+</div>
+
+<script type="module">
+  import mermaid from '[https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs](https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs)';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
