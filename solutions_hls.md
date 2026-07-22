@@ -23,46 +23,26 @@ Our framework resolves non-affine memory conflicts directly at the LLVM Intermed
 
 Instead of treating memory addresses as simple geometric integers, our solution models hardware memory banks as distinct spatial regions. This enables automatic detection of memory conflicts without requiring linear geometric constraints.  
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│              Concurrent LLVM IR Memory Accesses         │
-└────────────────────────────┬────────────────────────────┘
-                             │
-                             ▼
-┌─────────────────────────────────────────────────────────┐
-│     Spatial Verification Engine (Separation Logic)      │
-└──────────────┬────────────────────────────┬─────────────┘
-               │                            │
-   (Disjoint Memory Banks)        (Shared Memory Bank)
-               │                            │
-               ▼                            ▼
-┌────────────────────────────┐┌───────────────────────────┐
-│  SMT Solver Verification   ││  Spatial Contradiction    │
-│  (Pairwise Inequalities)   ││      (P * P  =>  ┴)       │
-└──────────────┬─────────────┘└─────────────┬─────────────┘
-               │                            │
-       (Proven Valid)               (Conflicting / Unknown)
-               │                            │
-               ▼                            ▼
-┌────────────────────────────┐┌───────────────────────────┐
-│ Maximum Parallel Synthesis ││ Safe Sequential Fallback  │
-│    (Collision-Free RTL)    ││  (MUX-Driven Stall Logic) │
-└────────────────────────────┘└───────────────────────────┘
-```
+### Core Technologies & Intellectual Property (IP)
+Our solutions are powered by proprietary research, patent-pending architectures, and formal logic innovations:
 
-### Key Technical Pillars
+* **Separation Logic-Based Non-Linear Memory Hazard Verification**
+  * **The Tech**: Resolves non-affine hardware memory conflicts at the LLVM IR level by applying Separation Logic to reason about concurrent memory bank disjointness.
+  * **Status**: Korean Patent Application Filed (Provisional Specification)
+  * **Publication**: ["Separation Logic for Memory Conflict Detection in High-Level Synthesis" (Preprint DOI: 10.48550/arXiv.2607.07126)](https://doi.org/10.48550/arXiv.2607.07126)
 
-* **LLVM IR Integration:** Extracts flat 1D arithmetic address expressions directly from compiler getelementptr (GEP) instructions, bypassing complex multi-dimensional source code transformations.  
-* **Conflict-Free Unrolling (CFU) Condition:** Formulates parallel basic block execution requirements using Separation Logic's separating conjunction ($*$). If two parallel operations target the same memory bank $k$, the logical expression $bank(k) * bank(k)$ triggers an automatic spatial contradiction ($P * P \Rightarrow ot$).  
-* **Automated SMT Solver Translation:** Translates spatial disjointness requirements into a simple matrix of pairwise inequalities across immutable Static Single Assignment (SSA) registers. Downstream engines like Z3 automatically evaluate these conditions.  
-* **Deterministic Sequential Fallback:** Handles undecidable non-linear integer arithmetic safely. If the solver returns Unknown or times out, the framework automatically falls back to sequential execution with multiplexer-driven stall logic, ensuring absolute safety.  
-* **Theorem of Soundness:** Provides a rigorous mathematical proof bridging software SMT verification directly to physical Verilog RTL execution traces, ensuring synthesized hardware is immune to memory collisions.  
+```mermaid
+flowchart TD
+    A["Concurrent LLVM IR Memory Accesses"] --> B["Spatial Verification Engine<br/><i>(Separation Logic)</i>"]
+    
+    B -->|"Disjoint Memory Banks"| C["SMT Solver Verification<br/><i>(Pairwise Inequalities)</i>"]
+    B -->|"Shared Memory Bank"| D["Spatial Contradiction<br/><i>(P ★ P ⇒ ┴)</i>"]
+    
+    C -->|"Proven Valid"| E["<b>Maximum Parallel Synthesis</b><br/>Collision-Free RTL"]
+    D -->|"Conflicting / Unknown"| F["<b>Safe Sequential Fallback</b><br/>MUX-Driven Stall Logic"]
 
-### Key Value & Business Benefits
-
-| Feature | Legacy HLS Tools (Polyhedral) | Our Spatial Logic Framework |
-| :--- | :--- | :--- |
-| **Index Math Support** | Strictly limited to linear/affine equations | Full support for modulo, division, & non-linear terms |
-| **Conflict Handling** | Conservative serialization on non-linear terms | Mathematical proof of parallel bank disjointness |
-| **Hardware Efficiency** | High multiplexer & state-machine overhead | Optimized area usage & maximum clock cycle throughput |
-| **Safety Guarantees** | Risk of conservative performance degradation | Mathematically proven trace safety via SMT oracle |
+    %% Styling
+    style A fill:#f8f9fa,stroke:#6c757d,stroke-width:1px
+    style B fill:#e9ecef,stroke:#495057,stroke-width:2px
+    style E fill:#d4edda,stroke:#28a745,stroke-width:2px
+    style F fill:#fff3cd,stroke:#ffc107,stroke-width:2px

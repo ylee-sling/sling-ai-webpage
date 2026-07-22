@@ -12,36 +12,27 @@ Processing high-volume minor traffic offenses—such as simple DUIs, unlicensed 
 
 To solve this, our framework introduces a **Neuro-Symbolic AI Solution**. By dividing responsibilities—using LLMs solely for language understanding and a formal math engine for rule calculations—we achieve trustworthy, mathematically proven sentencing predictions and automated document drafting.  
 
+### Core Technologies & Intellectual Property (IP)
+Our solutions are powered by proprietary research, patent-pending architectures, and formal logic innovations:
+
+* **Neuro-Symbolic Framework for Legal Reasoning & Document Synthesis**
+  * **The Tech**: Combines LLMs for grounded text extraction with an SMT formal logic engine to compute deterministic fine ranges and generate verifiable prosecutorial documents.
+  * **Publication**: ["Neuro-Symbolic AI for Korean Criminal Law: Sentencing Prediction and Document Drafting" (Preprint DOI: 10.5281/zenodo.21485636)](https://doi.org/10.5281/zenodo.21485636)
+
 ## How The Solution Works
 
 Our system transforms raw legal records into verified summary indictment documents through a clear 5-step pipeline:  
 
-```text
-[Raw Legal Docs] ➔ 1. OCR & Parsing ➔ 2. LLM Fact Extraction ➔ 3. Human Verification ➔ 4. Math Logic Engine ➔ 5. Verified Document & Decision Tree
-```
+```mermaid
+flowchart LR
+    A["📄 Raw Legal Docs"] --> B["1. OCR & Parsing"]
+    B --> C["2. LLM Fact Extraction"]
+    C --> D["3. Human Verification<br/><i>(Human-in-the-Loop)</i>"]
+    D --> E["4. Math Logic Engine<br/><i>(Z3 SMT Solver)</i>"]
+    E --> F["5. Verified Document &<br/>Decision Tree"]
 
-### 1. Document Ingestion & Parsing
-The system ingests unstructured evidentiary records—such as breathalyzer test results, police reports, and suspect interrogation logs—converting them into structured text streams.  
-
-### 2. Grounded Fact Extraction
-An LLM reads the text to extract key case elements (e.g., Blood Alcohol Concentration, prior offenses, aggravating factors). Crucially, the LLM anchors every extracted detail directly to its source sentence in the original document to prevent false claims.  
-
-### 3. Human-in-the-Loop Verification
-Before any calculations occur, a prosecutor or legal reviewer evaluates the extracted facts via a split-screen interface. Only human-approved facts are passed forward to the logic engine, ensuring total human authority over the legal process.  
-
-### 4. Deterministic Fine Computation
-Human-verified facts are fed into an advanced formal logic engine (the Z3 SMT Solver). Grounded in the 2026 Sentencing Guidelines for Traffic Offenses, the solver mathematically calculates the exact statutory fine range or identifies mandatory imprisonment criteria with zero risk of AI hallucination.  
-
-### 5. Document Generation & Visual Audit Trail
-The system generates properly structured prosecutorial forms—such as Summary Indictment Requests (yaksik-gongsojang)—and creates an interactive decision tree showing the exact logic used to reach the sentencing outcome.  
-
-## Key Benefits
-
-| Benefit | How It Works |
-| :--- | :--- |
-| **Zero Math Hallucinations** | Statutory fine calculations are offloaded to a formal mathematical solver rather than guessed by generative AI. |
-| **Complete Human Oversight** | A "Human-in-the-Loop" workflow ensures legal professionals validate extracted facts before any decision is made. |
-| **Transparent & Auditable** | Generates visual sentencing trees so prosecutors can easily verify and explain how a fine was derived. |
-| **Drastic Efficiency Gains** | Automates administrative document creation for routine, high-volume cases so legal experts can focus on complex matters. |
-
-**Summary:** By combining the language comprehension of LLMs with the absolute accuracy of formal mathematical verification, our Neuro-Symbolic AI delivers a transparent, practical, and accountable tool for modern legal practice.
+    %% Styling
+    style A fill:#f8f9fa,stroke:#6c757d
+    style D fill:#cce5ff,stroke:#004085,stroke-width:2px
+    style E fill:#d4edda,stroke:#155724,stroke-width:2px
+    style F fill:#e2e3e5,stroke:#383d41,stroke-width:2px
