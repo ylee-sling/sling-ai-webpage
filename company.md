@@ -48,9 +48,11 @@ SLING AI drives innovation across information technology and professional techni
 
 ## Location
 
-**Address**: Unit 3B, Room 305, 3rd Floor, 18 Euncheong-ro, Namdong-gu, Incheon, Republic of Korea (Gojan-dong, Namdong Business Center)
+* **Address (English)**: Room 672, 5-6F, 185 Incheon tower-daero, Yeonsu-gu, Incheon, Republic of Korea (Postal Code: 22009)
+* **Address (Korean)**: 인천광역시 연수구 인천타워대로 185, 5-6층 672호 (송도동, 송도 센트럴비즈 한라) (우편번호: 22009)
 
-Based in the Namdong National Industrial Complex, SLING AI leads AI innovation for the manufacturing sector. Please contact us via phone or email for consultations or visits.
+*SLING AI is located in FASTFIVE Songdo Central. (슬링AI는 패스트파이브 송도센트럴점에 입주해 있습니다.)*  
+Please contact us via phone or email for consultations or visits.
 
 ---
 
