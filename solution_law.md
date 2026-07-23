@@ -18,7 +18,7 @@ Our solutions are powered by proprietary research, patent-pending architectures,
 * **Neuro-Symbolic Framework for Legal Reasoning & Document Synthesis**
   * **The Tech**: Combines LLMs for grounded text extraction with an SMT formal logic engine to compute deterministic fine ranges and generate verifiable prosecutorial documents.
   * **Status**: Korean Patent Application Filed (Provisional Specification)
-  * **Publication**: ["Neuro-Symbolic AI for Korean Criminal Law: Sentencing Prediction and Document Drafting" (Preprint DOI: 10.5281/zenodo.21485636)](https://doi.org/10.5281/zenodo.21485636)
+  * **Publication**: ["Neuro-Symbolic AI for Korean Criminal Law: Sentencing Prediction and Document Drafting" (Preprint DOI: 10.48550/arXiv.2607.19740)](https://doi.org/10.48550/arXiv.2607.19740)
 
 ## How The Solution Works
 
