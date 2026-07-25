@@ -7,11 +7,10 @@ nav_order: 1
 ![SLING AI Logo]({% link assets/images/company_logo.png %}){: width="250" }
 {: .mt-4 }
 
-## "Separation Logic Inspires Non-erroneous Generative AI"
+## "Symbolic Logic Inspires Normative Generative AI"
 {: .fs-6 .fw-300 }
 
-
-SLING AI develops technology that **prevents AI from deviating from predefined rules**, ensuring reliability even when dealing with unpredictable generative models. Based on Separation Logic, we empower industries to deploy AI safely in mission-critical environments.
+SLING AI develops technology designed to **help prevent AI models from violating predefined operational rules**, improving system reliability when working with generative architectures. Grounded in Separation Logic, our verification framework enables organizations to deploy AI safely in mission-critical environments.
 
 [View Solutions]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
 
@@ -19,18 +18,17 @@ SLING AI develops technology that **prevents AI from deviating from predefined r
 
 ## What We Do
 
-While modern Large Language Models (LLMs) are highly capable, they often suffer from **hallucinations**—generating plausible but false information. In everyday conversation, this might be harmless, but in **manufacturing, a single AI hallucination can lead to equipment damage or serious safety accidents.**
+While modern Large Language Models (LLMs) offer strong natural language capabilities, they can produce **hallucinations**—generating plausible but unverified or inaccurate information. In informal settings, this may be benign; however, in **high-stakes domains like precision manufacturing, chip design, or legal processing, unverified outputs present severe operational risks.**
 
-SLING AI cross-references AI outputs with "logical ground truths" (Separation Logic), allowing **only mathematically proven safe responses** to pass through. This enables industries to integrate AI into their core operations with absolute confidence.
+SLING AI cross-references AI outputs against formal mathematical rules (Separation Logic), verifying that **generated responses satisfy defined safety constraints prior to execution**. This approach enables organizations to integrate generative AI into core workflows with increased precision and control.
 
 ### Latest News
 
+**May 2026** | Two provisional patent applications filed for multi-tool path verification and Neuro-Symbolic G-code generation.
 
-**May 2026** | Two provisional patents filed for concurrent multi-tool verification and Neuro-Symbolic G-code generation.
+**May 2026** | Two preprints published on arXiv detailing the mathematical foundations for G-code safety and logic-based verification.
 
-**May 2026** | Two preprints published on arXiv detailing the mathematical foundations of G-code safety and logic-based verification.
-
-**Feb. 2026** | Formal patent filed for technology to prevent precision machinery collisions (Based on Formal Verification).
+**Feb. 2026** | Patent application filed for Separation Logic-based G-code collision pre-verification technology.
 
 ---
 
@@ -38,17 +36,17 @@ SLING AI cross-references AI outputs with "logical ground truths" (Separation Lo
 
 | Core Value | Description |
 | :--- | :--- |
-| **Hallucination Filter** | Instantly filters out AI-specific **hallucinations** using logical rules to maximize output reliability. |
-| **Flawless Safety Verification** | Minimizes logical errors through mathematical modeling (**Formal Verification**) before system execution. |
-| **Industry-Tailored AX** | Provides strategic safety roadmaps for AI Transformation (AX) specifically for the manufacturing sector. |
+| **Output Filtering** | Filters AI-generated **hallucinations** against formal logical rules to improve output reliability. |
+| **Formal Safety Verification** | Evaluates spatial and operational constraints through mathematical modeling (**Formal Verification**) prior to system execution. |
+| **Domain-Tailored AI Integration** | Provides verification frameworks for AI Transformation (AX) across specialized sectors like manufacturing, hardware synthesis, and legaltech. |
 
 ---
 
 ## Why SLING AI?
 
-1. **Mathematical Rigor**: We don't rely on "probabilistic guesses." We verify AI safety through mathematical **Theorem Proving**.
-2. **Manufacturing Optimization**: We serve as a guardrail in precision manufacturing (such as CNC machining), where even the slightest collision is unacceptable, ensuring AI hallucinations never turn into accidents.
-3. **Unmatched Expertise**: Our "logical guidelines" for AI are designed by a **Ph.D. expert** specializing in the Theory of Computation and Automated Reasoning.
+1. **Mathematical Rigor**: We complement probabilistic AI models with formal verification methods, such as Separation Logic and SMT Solvers, to evaluate output bounds.
+2. **High-Stakes Domain Focus**: We provide guardrails for critical operations—such as 5-axis CNC machining, FPGA architecture synthesis, and legal summary proceedings—where operational accuracy is essential.
+3. **Specialized Expertise**: Our logical verification frameworks are designed by **Ph.D. researchers** specializing in the Theory of Computation and Automated Reasoning.
 
 ---
 

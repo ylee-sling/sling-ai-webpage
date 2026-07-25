@@ -8,26 +8,26 @@ nav_order: 2
 # Spatial Logic Solutions for High-Performance Hardware Synthesis
 {: .fs-9 }
 
-## The Challenge: The Non-Linear Memory Bottleneck in HLS
+## The Challenge: Non-Linear Memory Bottlenecks in HLS
 {: .fs-6 .fw-300 }
 
-High-Level Synthesis (HLS) accelerates hardware development by converting high-level software code (C/C++) directly into parallel Register Transfer Level (RTL) hardware architectures, such as FPGAs. To maximize performance, HLS tools unroll loops and partition arrays across isolated physical memory banks to enable concurrent data access within a single clock cycle.  
+High-Level Synthesis (HLS) accelerates hardware development by converting high-level software code (C/C++) directly into parallel Register Transfer Level (RTL) hardware architectures, such as FPGAs. To improve performance, HLS tools unroll loops and partition arrays across isolated physical memory banks to enable concurrent data access within a single clock cycle.  
 
 * **Structural Memory Hazards:** When multiple concurrent operations attempt to access the same single-ported memory bank during the same clock cycle, hardware memory collisions occur.  
-* **Legacy Polyhedral Limitations:** Traditional dependency solvers rely on geometric polyhedral models that require linear (affine) address calculations. When index formulas contain non-linear operations—such as modulo, division, dynamic pointer arithmetic, or symbolic register multiplication—these legacy tools break down.  
-* **Artificial Performance Bottlenecks:** To remain safe, conventional tools over-approximate dependencies and conservatively serialize memory operations. This destroys parallel performance and injects costly multiplexer-driven stall logic into the synthesized hardware.  
+* **Polyhedral Analysis Limitations:** Traditional dependency solvers rely on geometric polyhedral models that require linear (affine) address calculations. When index formulas contain non-linear operations—such as modulo, division, dynamic pointer arithmetic, or symbolic register multiplication—these methods often struggle to verify memory independence.  
+* **Performance Bottlenecks:** To ensure safety, conventional tools over-approximate dependencies and conservatively serialize memory operations. This can restrict parallel performance and introduce multiplexer-driven stall logic into the synthesized hardware.  
 
 ## Our Solution: Spatial Verification via Separation Logic
 
-Our framework resolves non-affine memory conflicts directly at the LLVM Intermediate Representation (IR) level by repurposing Separation Logic—a mathematical formalism designed for reasoning about disjoint physical resources.  
+Our framework addresses non-affine memory conflicts at the LLVM Intermediate Representation (IR) level by applying Separation Logic—a mathematical formalism designed for reasoning about disjoint physical resources.  
 
-Instead of treating memory addresses as simple geometric integers, our solution models hardware memory banks as distinct spatial regions. This enables automatic detection of memory conflicts without requiring linear geometric constraints.  
+Instead of treating memory addresses purely as geometric integers, our approach models hardware memory banks as distinct spatial regions. This enables memory conflict detection without relying strictly on linear geometric constraints.  
 
 ### Core Technologies & Intellectual Property (IP)
-Our solutions are powered by proprietary research, patent-pending architectures, and formal logic innovations:
+Our solutions are based on original research and patent-pending architectures:
 
 * **Separation Logic-Based Non-Linear Memory Hazard Verification**
-  * **The Tech**: Resolves non-affine hardware memory conflicts at the LLVM IR level by applying Separation Logic to reason about concurrent memory bank disjointness.
+  * **The Tech**: Analyzes non-affine hardware memory conflicts at the LLVM IR level by applying Separation Logic to evaluate concurrent memory bank disjointness.
   * **Status**: Korean Patent Application Filed (Provisional Specification)
   * **Publication**: ["Separation Logic for Memory Conflict Detection in High-Level Synthesis" (Preprint DOI: 10.48550/arXiv.2607.07126)](https://doi.org/10.48550/arXiv.2607.07126)
 
@@ -72,7 +72,7 @@ Our solutions are powered by proprietary research, patent-pending architectures,
 
     <!-- Final Nodes -->
     <rect x="40" y="260" width="240" height="52" rx="6" fill="#d4edda" stroke="#28a745" stroke-width="2"/>
-    <text x="160" y="282" text-anchor="middle" font-size="13" font-weight="bold" fill="#155724">Maximum Parallel Synthesis</text>
+    <text x="160" y="282" text-anchor="middle" font-size="13" font-weight="bold" fill="#155724">Optimized Parallel Synthesis</text>
     <text x="160" y="300" text-anchor="middle" font-size="11" fill="#155724">Collision-Free RTL</text>
 
     <rect x="400" y="260" width="240" height="52" rx="6" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
@@ -80,4 +80,3 @@ Our solutions are powered by proprietary research, patent-pending architectures,
     <text x="520" y="300" text-anchor="middle" font-size="11" fill="#856404">MUX-Driven Stall Logic</text>
   </svg>
 </div>
-

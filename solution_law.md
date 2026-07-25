@@ -5,24 +5,24 @@ layout: default
 nav_order: 3
 ---
 
-# AI Precision Meets Legal Rigor: Next-Generation Summary Proceeding Automation
+# Neuro-Symbolic AI for Summary Proceeding Automation
 {: .fs-9 }
 
-Processing high-volume minor traffic offenses—such as simple DUIs, unlicensed driving, and minor traffic casualties—creates a heavy administrative burden for prosecutors and judicial personnel. While standard Large Language Models (LLMs) excel at reading natural language, they rely on probabilities and frequently make math errors ("hallucinations") when calculating fine ranges or enforcing strict legal rules. In criminal law, where accuracy and accountability are paramount, standard generative AI falls short.  
+Processing high-volume minor traffic offenses—such as simple DUIs, unlicensed driving, and minor traffic casualties—creates a significant administrative burden for prosecutors and judicial personnel. While standard Large Language Models (LLMs) are effective at processing natural language text, they rely on probabilistic predictions and can produce errors ("hallucinations") when calculating fine ranges or applying explicit statutory rules. In legal contexts, where accuracy and accountability are critical, relying solely on probabilistic models presents challenges.  
 
-To solve this, our framework introduces a **Neuro-Symbolic AI Solution**. By dividing responsibilities—using LLMs solely for language understanding and a formal math engine for rule calculations—we achieve trustworthy, mathematically proven sentencing predictions and automated document drafting.  
+To address these limitations, our framework uses a **Neuro-Symbolic AI approach**. By separating responsibilities—using LLMs for natural language parsing and structured fact extraction alongside a formal logic engine for rule-based calculations—we support reliable sentencing estimations and automated document drafting.  
 
 ### Core Technologies & Intellectual Property (IP)
-Our solutions are powered by proprietary research, patent-pending architectures, and formal logic innovations:
+Our solutions are based on original research and patent-pending architectures:
 
 * **Neuro-Symbolic Framework for Legal Reasoning & Document Synthesis**
-  * **The Tech**: Combines LLMs for grounded text extraction with an SMT formal logic engine to compute deterministic fine ranges and generate verifiable prosecutorial documents.
+  * **The Tech**: Combines LLMs for grounded text extraction with an SMT formal logic engine to compute fine ranges according to statutory rules and generate verifiable prosecutorial documents.
   * **Status**: Korean Patent Application Filed (Provisional Specification)
   * **Publication**: ["Neuro-Symbolic AI for Korean Criminal Law: Sentencing Prediction and Document Drafting" (Preprint DOI: 10.48550/arXiv.2607.19740)](https://doi.org/10.48550/arXiv.2607.19740)
 
 ## How The Solution Works
 
-Our system transforms raw legal records into verified summary indictment documents through a clear 5-step pipeline:  
+Our system transforms raw legal records into verified summary indictment documents through a structured five-step pipeline:  
 
 
 <div align="center" style="margin: 2rem 0; width: 100%;">
