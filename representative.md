@@ -41,7 +41,7 @@ nav_order: 4
 
 #### Doctoral Dissertation
 * **Title**: Theoretical Studies of Program Verification Based on Separation Logic
-* **Direct Access**: [Nagoya University Academic Repository (Nalua)](http://hdl.handle.net/2237/0002014421)
+* **Direct Access**: [Nagoya University Academic Repository](http://hdl.handle.net/2237/0002014421)
 * **National Registry Search**:
   1. Access the [National Research Foundation (NRF) Foreign Doctoral Dissertation System](https://dr.nrf.re.kr/)
   2. Select the **Thesis Search (논문검색)** option.
