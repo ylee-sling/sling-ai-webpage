@@ -30,6 +30,7 @@ nav_order: 4
 
 ---
 
+
 ### Education
 
 | Period | Institution | Degree |
