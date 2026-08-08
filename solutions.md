@@ -22,6 +22,6 @@ Modern high-stakes automation faces a persistent challenge: **unpredictability**
 
 ## Inquiries
 
-SLING AI’s technologies are designed for sectors where precision and error control are critical—including **precision manufacturing, aerospace, semiconductor design, and medical devices.**
+SLING AI’s technologies are designed for sectors where precision and error control are critical.
 
 [Contact Us]({% link company.md %}){: .btn }
