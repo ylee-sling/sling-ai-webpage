@@ -19,7 +19,7 @@ Our solutions are based on original research and patent-pending architectures:
     * Korean Patent Application Filed (Feb 2026, App No. [10-2026-0033761](https://doi.org/10.8080/1020260033761); Under Examination)
     * Subsequent Korean Patent Application Filed (May 2026, App No. 10-2026-0080180; Provisional Specification)
     * Subsequent Korean Patent Application Filed (May 2026, App No. 10-2026-0088912; Provisional Specification)
-  * **Publication**: [Preprint (DOI): 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437)
+  * **Paper**: [Preprint (DOI): 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437)
 
 <div align="center" style="margin: 2rem 0; width: 100%;">
   <svg viewBox="0 0 680 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 680px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
@@ -68,7 +68,7 @@ While Large Language Models (LLMs) offer significant potential for automating co
   * **Status**: 
     * Korean Patent Application Filed (May 2026, App No. 10-2026-0083867; Provisional Specification)
     * Korean Patent Application Filed (May 2026, App No. 10-2026-0090306; Provisional Specification)
-  * **Publication**: [Preprint (DOI): 10.48550/arXiv.2605.10568](https://doi.org/10.48550/arXiv.2605.10568)
+  * **Paper**: [Preprint (DOI): 10.48550/arXiv.2605.10568](https://doi.org/10.48550/arXiv.2605.10568)
 
 <div align="center" style="margin: 2rem 0; width: 100%;">
   <svg viewBox="0 0 740 330" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 740px; height: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">

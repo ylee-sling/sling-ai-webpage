@@ -29,7 +29,7 @@ Our solutions are based on original research and patent-pending architectures:
 * **Separation Logic-Based Non-Linear Memory Hazard Verification**
   * **The Tech**: Analyzes non-affine hardware memory conflicts at the LLVM IR level by applying Separation Logic to evaluate concurrent memory bank disjointness.
   * **Status**: Korean Patent Application Filed (Provisional Specification)
-  * **Publication**: ["Separation Logic for Memory Conflict Detection in High-Level Synthesis" (Preprint DOI: 10.48550/arXiv.2607.07126)](https://doi.org/10.48550/arXiv.2607.07126)
+  * **Paper**: ["Separation Logic for Memory Conflict Detection in High-Level Synthesis" (Preprint DOI: 10.48550/arXiv.2607.07126)](https://doi.org/10.48550/arXiv.2607.07126)
 
 
 <div align="center" style="margin: 2rem 0;">

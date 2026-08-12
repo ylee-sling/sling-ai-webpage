@@ -66,7 +66,7 @@ nav_order: 4
 
 ---
 
-### Selected Publications
+### Selected Papers
 
 
 **2025** | **Incorrectness separation logic with arrays and pointer arithmetic**
