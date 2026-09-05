@@ -9,7 +9,7 @@ nav_order: 4
 
 ## CEO's Message
 
-> "Symbolic Logic Inspires Normative Grounded AI. At SLING AI, we unite mathematical logic with AI models to ensure technology operates safely, predictably, and with reliability."
+> "Symbolic Logic Inspires Normal and General AI. At SLING AI, we unite mathematical logic with AI models to ensure technology operates safely, predictably, and with reliability."
 
 
 ---

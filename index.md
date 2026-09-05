@@ -7,7 +7,7 @@ nav_order: 1
 ![SLING AI Logo]({% link assets/images/company_logo.png %}){: width="250" }
 {: .mt-4 }
 
-## "Symbolic Logic Inspires Normative Grounded AI"
+## "Symbolic Logic Inspires Normal and General AI"
 {: .fs-6 .fw-300 }
 
 SLING AI develops technology designed to **help prevent AI models from violating predefined operational rules**, improving system reliability when working with generative architectures. Grounded in Separation Logic, our verification framework enables organizations to deploy AI safely in mission-critical environments.
