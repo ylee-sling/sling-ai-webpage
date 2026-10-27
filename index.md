@@ -9,15 +9,9 @@ description: "SLING AI Inc. — Vision-Predictor-Action (VPA): real-time, hesita
 
 {% include vpa_showcase.html %}
 
+{% include vpa_demo.html home="yes" %}
+
 {% include architecture.html %}
-
-{% include benchmarks.html %}
-
-{% include demo_section.html %}
-
-{% include business_model.html %}
-
-{% include team.html %}
 
 ---
 

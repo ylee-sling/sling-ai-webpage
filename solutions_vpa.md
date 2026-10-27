@@ -22,7 +22,7 @@ Real-time, hesitation-free robot intelligence: a neuro-symbolic milestone planne
 
 {% include benchmarks.html %}
 
-{% include demo_section.html %}
+{% include vpa_demo.html %}
 
 {% include business_model.html %}
 

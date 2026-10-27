@@ -1,0 +1,23 @@
+{%- comment -%}
+  VPA rollout GIFs. Usage:
+    {% include vpa_demo.html %}              all demos (VPA solution page)
+    {% include vpa_demo.html home="yes" %}   only demos marked `home: true`
+{%- endcomment -%}
+{%- assign vpa = site.data.vpa -%}
+<div class="sl-section" id="demo">
+  <p class="sl-kicker">VPA in action</p>
+  <h2 class="sl-h2">Real rollouts from the LIBERO-10 benchmark</h2>
+  <div class="sl-gifs{% if include.home %} sl-gifs--single{% endif %}">
+    {%- for d in vpa.demos %}
+    {%- if include.home and d.home != true %}{% continue %}{% endif %}
+    <figure class="sl-gif">
+      <img src="{{ d.file | relative_url }}" alt="VPA robot rollout: {{ d.task }}" width="512" height="256" loading="lazy">
+      <figcaption>{{ d.task }}</figcaption>
+    </figure>
+    {%- endfor %}
+  </div>
+  <p class="sl-source">
+    Two-camera VPA policy in the LIBERO simulator, played at 2× speed. Left: third-person camera; right: wrist camera.
+    <a href="{{ vpa.demos_more }}" target="_blank" rel="noopener noreferrer">More rollouts and per-task results on GitHub</a>.
+  </p>
+</div>

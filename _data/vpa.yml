@@ -38,10 +38,15 @@ metrics:
     label: "Publicly reproducible"
     detail: "Paper, code, and weights (PyTorch + safetensors, GPL-3.0) are all public."
 
-# Product demo. When a real rollout recording is available, drop the file in
-# assets/videos/ and set `video` (and optionally `poster`). The recording is
-# then shown above the interactive telemetry simulation.
-demo:
-  video: ""          # e.g. "/assets/videos/vpa_libero10_rollout.mp4"
-  poster: ""         # e.g. "/assets/images/vpa_rollout_poster.jpg"
-  video_caption: "VPA executing a LIBERO-10 long-horizon task. Each decision step completes in 10–14 ms, so the arm never pauses to wait for the model."
+# Rollout GIFs copied from the VPA repo (docs/media, GPL-3.0). Two-camera
+# policy on LIBERO-10 in simulation, 2x speed; left half = third-person
+# camera, right half = wrist camera. `home: true` also shows it on the home page.
+demos:
+  - file: "/assets/media/task05_trial01_2cam.gif"
+    task: "Pick up the book and place it in the back compartment of the caddy"
+    home: true
+  - file: "/assets/media/task07_trial00_2cam.gif"
+    task: "Put both the alphabet soup and the cream cheese box in the basket"
+  - file: "/assets/media/task08_trial02_2cam.gif"
+    task: "Put both moka pots on the stove"
+demos_more: "https://github.com/ylee-sling/Vision-Predictor-Action#results-on-libero-10-preliminary"
