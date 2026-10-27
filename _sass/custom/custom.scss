@@ -43,7 +43,8 @@
   a { color: inherit; }
 }
 .sl-hero__top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-.sl-hero__logo { width: 72px; height: 72px; object-fit: contain; background: #fff; border-radius: 12px; padding: 6px; }
+.sl-logo { margin-top: 1rem; }
+.sl-hero__logo { display: block; width: 280px; max-width: 100%; height: auto; }
 .sl-badge {
   display: inline-flex; align-items: center; gap: .5rem;
   padding: .35rem .8rem;
@@ -153,6 +154,7 @@
 }
 
 @media (max-width: 40rem) {
+  .sl-hero__logo { width: 210px; }
   .sl-hero { padding: 1.4rem 1.1rem 1.1rem; }
   .main-content .sl-hero__title { font-size: 1.5rem !important; }
 }
