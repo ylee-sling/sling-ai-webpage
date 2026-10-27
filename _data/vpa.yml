@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# VPA (Vision-Predictor-Action) — single source of truth for the landing page.
+# Every figure below is taken from the arXiv preprint (2610.15556) or the
+# Hugging Face model card. Change numbers HERE, not in the templates.
+# ---------------------------------------------------------------------------
+
+status_badge: "Status: Proven Working MVP (Benchmarked & Open-Source Verified)"
+
+mission: >-
+  Bringing mathematical safety and reliability to generative AI models
+  operating in critical physical systems.
+
+headline: >-
+  Real-Time, Hesitation-Free Robot Intelligence Powered by
+  Vision-Predictor-Action (VPA).
+
+links:
+  arxiv: "https://arxiv.org/abs/2610.15556"
+  github: "https://github.com/ylee-sling/Vision-Predictor-Action"
+  huggingface: "https://huggingface.co/ylee-sling/vpa-libero10"
+
+paper:
+  title: "Vision-Predictor-Action: Towards Efficient Embodied AI via Neuro-Symbolic JEPA Predictors"
+  date: "October 2026"
+  arxiv_id: "2610.15556"
+
+metrics:
+  - value: "10–14 ms"
+    label: "Latency per decision step"
+    detail: "≈ 70–100 Hz real-time control. Measured on an Apple M4 edge SoC (single-camera reference configuration)."
+  - value: "40.0%"
+    label: "LIBERO-10 success rate"
+    detail: "Two-camera policy, 80 / 200 episodes (95% CI 33.5–46.9%). Preliminary: single training run."
+  - value: "< 20M"
+    label: "Trainable parameters"
+    detail: "Checkpoint under 75 MB. Trained in under 3 hours on a single GPU."
+  - value: "100%"
+    label: "Publicly reproducible"
+    detail: "Paper, code, and weights (PyTorch + safetensors, GPL-3.0) are all public."
+
+# Product demo. When a real rollout recording is available, drop the file in
+# assets/videos/ and set `video` (and optionally `poster`). The recording is
+# then shown above the interactive telemetry simulation.
+demo:
+  video: ""          # e.g. "/assets/videos/vpa_libero10_rollout.mp4"
+  poster: ""         # e.g. "/assets/images/vpa_rollout_poster.jpg"
+  video_caption: "VPA executing a LIBERO-10 long-horizon task. Each decision step completes in 10–14 ms, so the arm never pauses to wait for the model."

@@ -1,0 +1,194 @@
+{%- assign demo = site.data.vpa.demo -%}
+<div class="sl-section" id="demo">
+  <p class="sl-kicker">Product demo</p>
+  <h2 class="sl-h2">See the difference a 10&nbsp;ms decision makes</h2>
+
+  {%- if demo.video and demo.video != "" %}
+  <figure class="sl-video">
+    <video controls muted playsinline preload="metadata"{% if demo.poster and demo.poster != "" %} poster="{{ demo.poster | relative_url }}"{% endif %}>
+      <source src="{{ demo.video | relative_url }}" type="video/mp4">
+      Your browser does not support embedded video.
+    </video>
+    <figcaption>{{ demo.video_caption }}</figcaption>
+  </figure>
+  {%- endif %}
+
+  <div class="sl-demo" data-sl-demo>
+    <div class="sl-demo__toolbar">
+      <span class="sl-demo__note">Illustrative simulation of the same pick-and-pull task</span>
+      <button type="button" class="sl-demo__toggle" data-sl-toggle aria-pressed="false">Pause</button>
+    </div>
+    <div class="sl-demo__panes">
+      <div class="sl-demo__pane" data-pane="ar">
+        <div class="sl-demo__head"><span class="sl-dot sl-dot--warn"></span>Token-by-token VLA <small>(≈ 4 Hz, illustrative)</small></div>
+        <svg class="sl-demo__stage" viewBox="0 0 300 170" aria-hidden="true">
+          <rect x="196" y="78" width="70" height="40" rx="4" class="sl-demo__drawer"/>
+          <rect x="214" y="86" width="34" height="6" rx="3" class="sl-demo__handle"/>
+          <polyline class="sl-demo__plan" points="30,150 230,40 230,89 110,89"/>
+          <polyline class="sl-demo__trail" points=""/>
+          <circle class="sl-demo__ee" r="7" cx="30" cy="150"/>
+          <text class="sl-demo__status" x="10" y="18"></text>
+        </svg>
+        <dl class="sl-telemetry">
+          <div><dt>Control rate</dt><dd data-t="hz">–</dd></div>
+          <div><dt>Last decision</dt><dd data-t="lat">–</dd></div>
+          <div><dt>Time spent waiting</dt><dd data-t="wait">–</dd></div>
+          <div><dt>Task time</dt><dd data-t="time">–</dd></div>
+        </dl>
+      </div>
+      <div class="sl-demo__pane" data-pane="vpa">
+        <div class="sl-demo__head"><span class="sl-dot sl-dot--ok"></span>VPA <small>(10–14 ms → ≈ 70–100 Hz)</small></div>
+        <svg class="sl-demo__stage" viewBox="0 0 300 170" aria-hidden="true">
+          <rect x="196" y="78" width="70" height="40" rx="4" class="sl-demo__drawer"/>
+          <rect x="214" y="86" width="34" height="6" rx="3" class="sl-demo__handle"/>
+          <polyline class="sl-demo__plan" points="30,150 230,40 230,89 110,89"/>
+          <polyline class="sl-demo__trail" points=""/>
+          <circle class="sl-demo__ee" r="7" cx="30" cy="150"/>
+          <text class="sl-demo__status" x="10" y="18"></text>
+        </svg>
+        <dl class="sl-telemetry">
+          <div><dt>Control rate</dt><dd data-t="hz">–</dd></div>
+          <div><dt>Last decision</dt><dd data-t="lat">–</dd></div>
+          <div><dt>Time spent waiting</dt><dd data-t="wait">–</dd></div>
+          <div><dt>Task time</dt><dd data-t="time">–</dd></div>
+        </dl>
+        <svg class="sl-spark" viewBox="0 0 300 40" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="0" y1="8" x2="300" y2="8" class="sl-spark__ref"/>
+          <polyline class="sl-spark__line" points=""/>
+        </svg>
+        <div class="sl-spark__label">Per-decision latency (last 60 decisions, 0–15 ms scale)</div>
+      </div>
+    </div>
+    <p class="sl-demo__caption">
+      <strong>What you are seeing:</strong> both arms follow the same plan: reach above the handle,
+      grasp it, pull the drawer open. The token-by-token model must stop and wait while it decodes each
+      action, so the arm moves in bursts. VPA issues a fresh trajectory chunk every 10–14&nbsp;ms, so the
+      arm runs continuously at up to 100&nbsp;Hz and never hesitates. VPA latency values are drawn from the
+      10–14&nbsp;ms range measured in the paper; the VLA timing is a representative illustration. This is a
+      browser simulation, not a recording of physical hardware.
+    </p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.querySelector('[data-sl-demo]');
+  if (!root || !window.requestAnimationFrame) return;
+
+  var PATH = [[30, 150], [230, 40], [230, 89], [110, 89]];
+  var MILESTONES = ['reach above handle', 'grasp handle', 'pull drawer open'];
+  var MOVE_SPEED = 0.16;          // path units per ms while the arm is moving
+  var VLA_THINK = [140, 200];     // ms of decoding per decision (illustrative)
+  var VLA_MOVE = 90;              // ms of motion executed per VLA decision
+  var VPA_LAT = [10, 14];         // ms, measured range from the paper
+
+  var segLen = [], total = 0;
+  for (var i = 1; i < PATH.length; i++) {
+    var d = Math.hypot(PATH[i][0] - PATH[i - 1][0], PATH[i][1] - PATH[i - 1][1]);
+    segLen.push(d); total += d;
+  }
+  function pointAt(s) {
+    s = Math.max(0, Math.min(total, s));
+    for (var i = 0; i < segLen.length; i++) {
+      if (s <= segLen[i] || i === segLen.length - 1) {
+        var t = segLen[i] ? s / segLen[i] : 0, a = PATH[i], b = PATH[i + 1];
+        return { x: a[0] + (b[0] - a[0]) * t, y: a[1] + (b[1] - a[1]) * t, seg: i };
+      }
+      s -= segLen[i];
+    }
+  }
+  function rand(r) { return r[0] + Math.random() * (r[1] - r[0]); }
+
+  function makeAgent(paneName) {
+    var pane = root.querySelector('[data-pane="' + paneName + '"]');
+    var first = paneName === 'ar' ? rand(VLA_THINK) : rand(VPA_LAT);
+    return {
+      kind: paneName, pane: pane, s: 0, t: 0, waited: 0, decisions: 0, lat: 0,
+      phase: 'think', phaseLeft: first, lastThink: first,
+      lats: [], trail: [],
+      ee: pane.querySelector('.sl-demo__ee'),
+      trailEl: pane.querySelector('.sl-demo__trail'),
+      status: pane.querySelector('.sl-demo__status'),
+      spark: pane.querySelector('.sl-spark__line'),
+      out: function (k) { return pane.querySelector('[data-t="' + k + '"]'); }
+    };
+  }
+
+  var agents, running = true, last = null, restartAt = null;
+  function reset() { agents = [makeAgent('ar'), makeAgent('vpa')]; restartAt = null; }
+
+  function step(a, dt) {
+    if (a.s >= total) return;
+    a.t += dt;
+    if (a.kind === 'vpa') {
+      // Decision latency overlaps with execution: the arm keeps moving on the
+      // previous chunk while the next one is computed.
+      a.phaseLeft -= dt;
+      while (a.phaseLeft <= 0) {
+        a.lat = rand(VPA_LAT); a.decisions++; a.lats.push(a.lat);
+        if (a.lats.length > 60) a.lats.shift();
+        a.phaseLeft += a.lat;
+      }
+      a.s += MOVE_SPEED * dt;
+    } else {
+      a.phaseLeft -= dt;
+      if (a.phase === 'think') {
+        a.waited += dt;
+        if (a.phaseLeft <= 0) { a.decisions++; a.lat = a.lastThink; a.phase = 'move'; a.phaseLeft = VLA_MOVE; }
+      } else {
+        a.s += MOVE_SPEED * dt;
+        if (a.phaseLeft <= 0) { a.phase = 'think'; a.lastThink = rand(VLA_THINK); a.phaseLeft = a.lastThink; }
+      }
+    }
+    if (a.s >= total) a.s = total;
+  }
+
+  function render(a) {
+    var p = pointAt(a.s);
+    a.ee.setAttribute('cx', p.x.toFixed(1)); a.ee.setAttribute('cy', p.y.toFixed(1));
+    a.trail.push(p.x.toFixed(1) + ',' + p.y.toFixed(1));
+    if (a.trail.length > 400) a.trail.shift();
+    a.trailEl.setAttribute('points', a.trail.join(' '));
+    var done = a.s >= total;
+    var waiting = a.kind === 'ar' && a.phase === 'think' && !done;
+    a.ee.classList.toggle('is-waiting', waiting);
+    a.status.textContent = done ? 'Task complete ✓'
+      : waiting ? 'Decoding action tokens… arm paused'
+      : 'Milestone: ' + MILESTONES[Math.min(p.seg, MILESTONES.length - 1)];
+    var secs = a.t / 1000;
+    a.out('hz').textContent = a.decisions && secs ? (a.decisions / secs).toFixed(a.kind === 'vpa' ? 0 : 1) + ' Hz' : '–';
+    a.out('lat').textContent = a.lat ? a.lat.toFixed(1) + ' ms' : '–';
+    a.out('wait').textContent = secs ? Math.round(100 * a.waited / a.t) + '%' : '–';
+    a.out('time').textContent = secs.toFixed(2) + ' s';
+    if (a.spark) {
+      var pts = a.lats.map(function (v, i) { return (i * 300 / 59).toFixed(1) + ',' + (40 - v / 15 * 32).toFixed(1); });
+      a.spark.setAttribute('points', pts.join(' '));
+    }
+  }
+
+  function frame(now) {
+    if (last === null) last = now;
+    var dt = Math.min(50, now - last); last = now;
+    if (running) {
+      // Sub-step so the 100 Hz agent is simulated at decision granularity.
+      var sub = Math.ceil(dt / 5);
+      for (var i = 0; i < sub; i++) agents.forEach(function (a) { step(a, dt / sub); });
+      agents.forEach(render);
+      if (agents.every(function (a) { return a.s >= total; })) {
+        if (restartAt === null) restartAt = now + 2200;
+        else if (now >= restartAt) reset();
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var btn = root.querySelector('[data-sl-toggle]');
+  function setRunning(v) { running = v; btn.textContent = v ? 'Pause' : 'Play'; btn.setAttribute('aria-pressed', String(!v)); }
+  btn.addEventListener('click', function () { setRunning(!running); });
+
+  reset();
+  agents.forEach(render);
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) setRunning(false);
+  requestAnimationFrame(frame);
+})();
+</script>

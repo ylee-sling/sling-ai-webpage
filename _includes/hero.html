@@ -1,0 +1,35 @@
+{%- assign vpa = site.data.vpa -%}
+<div class="sl-hero">
+  <div class="sl-hero__top">
+    <img class="sl-hero__logo" src="{{ '/assets/images/company_logo.png' | relative_url }}" alt="SLING AI Inc. logo" width="120" height="120">
+    <span class="sl-badge"><span class="sl-badge__dot" aria-hidden="true"></span>{{ vpa.status_badge }}</span>
+  </div>
+  <p class="sl-eyebrow">SLING AI Inc. · Embodied AI with mathematical guarantees</p>
+  <h1 class="sl-hero__title">{{ vpa.headline }}</h1>
+  <p class="sl-hero__mission"><strong>Our mission:</strong> {{ vpa.mission }}</p>
+  <p class="sl-hero__lede">
+    VPA is a robot control model that skips the slow word-by-word decoding used by today's
+    vision-language-action (VLA) robots. It plans in visual milestones and solves the whole
+    arm-and-gripper motion in a fixed number of steps, so every control decision takes
+    10–14&nbsp;ms on an edge chip.
+  </p>
+  <div class="sl-cta">
+    <a class="sl-btn sl-btn--primary" href="{{ vpa.links.arxiv }}" target="_blank" rel="noopener noreferrer">
+      Read the paper <span class="sl-btn__sub">arXiv {{ vpa.paper.arxiv_id }}</span>
+    </a>
+    <a class="sl-btn" href="{{ vpa.links.github }}" target="_blank" rel="noopener noreferrer">
+      VPA core algorithm <span class="sl-btn__sub">GitHub</span>
+    </a>
+    <a class="sl-btn" href="{{ vpa.links.huggingface }}" target="_blank" rel="noopener noreferrer">
+      Model checkpoints <span class="sl-btn__sub">Hugging Face</span>
+    </a>
+  </div>
+  <nav class="sl-jump" aria-label="On this page">
+    <a href="#vpa">The problem</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#benchmarks">Benchmarks</a>
+    <a href="#demo">Demo</a>
+    <a href="#business-model">Business model</a>
+    <a href="#team">Team</a>
+  </nav>
+</div>

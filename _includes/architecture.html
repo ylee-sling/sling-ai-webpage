@@ -1,0 +1,107 @@
+<div class="sl-section" id="how-it-works">
+  <p class="sl-kicker">How it works</p>
+  <h2 class="sl-h2">A two-stage architecture: the Brain sets the milestone, the Muscle moves</h2>
+  <div class="sl-grid sl-grid--2">
+    <div class="sl-card sl-card--brain">
+      <span class="sl-step">Stage 1</span>
+      <h3>The Brain — Visual Milestone Planner</h3>
+      <p>
+        A shared vision encoder reads the camera frames and goal image, and a frozen CLIP text
+        encoder reads the instruction. A <strong>neuro-symbolic skill selector</strong> then applies
+        discrete, rule-like logic to decide which skill comes next, for example
+        <em>“reach above handle”</em> → <em>“grasp handle”</em>.
+      </p>
+      <p>
+        A <strong>JEPA predictor</strong> forecasts what the scene should look like when that milestone
+        is reached. A milestone only advances once the robot's latent state crosses a threshold, which
+        keeps small errors from piling up across task phases.
+      </p>
+    </div>
+    <div class="sl-card sl-card--muscle">
+      <span class="sl-step">Stage 2</span>
+      <h3>The Muscle — Flow-Matching Motion Engine</h3>
+      <p>
+        Given the predicted milestone, a <strong>flow-matching solver</strong> integrates a learned
+        velocity field for a fixed number of steps (<em>K</em>) and outputs the
+        <strong>entire continuous arm-and-gripper trajectory chunk</strong> at once, not one coordinate
+        at a time.
+      </p>
+      <p>
+        Because the motion is solved as a smooth curve, the arm moves fluidly toward the milestone
+        while the Brain is already planning the next one.
+      </p>
+    </div>
+  </div>
+
+  <figure class="sl-figure">
+    <svg viewBox="0 0 760 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="vpa-arch-title vpa-arch-desc" style="width:100%;max-width:760px;height:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+      <title id="vpa-arch-title">VPA control loop</title>
+      <desc id="vpa-arch-desc">Camera frames and the instruction are encoded, a neuro-symbolic selector picks the next skill, a JEPA predictor forecasts the next latent milestone, a flow-matching solver produces a full action chunk in K steps, and the robot executes it before the loop repeats.</desc>
+      <defs>
+        <marker id="arr-vpa" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#6c757d"/>
+        </marker>
+      </defs>
+
+      <!-- Group: Brain -->
+      <rect x="372" y="8" width="380" height="118" rx="10" fill="none" stroke="#2869e6" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="386" y="26" font-size="11" font-weight="700" fill="#2869e6" letter-spacing="0.6">STAGE 1 · THE BRAIN</text>
+      <!-- Group: Muscle -->
+      <rect x="372" y="150" width="380" height="118" rx="10" fill="none" stroke="#1e7e44" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <text x="386" y="262" font-size="11" font-weight="700" fill="#1e7e44" letter-spacing="0.6">STAGE 2 · THE MUSCLE</text>
+
+      <!-- Row 1 -->
+      <rect x="10" y="40" width="160" height="62" rx="6" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5"/>
+      <text x="90" y="66" text-anchor="middle" font-size="12" font-weight="600" fill="#212529">Camera frames</text>
+      <text x="90" y="84" text-anchor="middle" font-size="10.5" fill="#6c757d">+ goal image &amp; instruction</text>
+      <line x1="170" y1="71" x2="196" y2="71" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arr-vpa)"/>
+
+      <rect x="200" y="40" width="160" height="62" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+      <text x="280" y="66" text-anchor="middle" font-size="12" font-weight="600" fill="#212529">Encoders</text>
+      <text x="280" y="84" text-anchor="middle" font-size="10.5" fill="#495057">vision + frozen CLIP text</text>
+      <line x1="360" y1="71" x2="386" y2="71" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arr-vpa)"/>
+
+      <rect x="390" y="40" width="160" height="62" rx="6" fill="#cce5ff" stroke="#004085" stroke-width="1.5"/>
+      <text x="470" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#004085">Neuro-symbolic</text>
+      <text x="470" y="77" text-anchor="middle" font-size="12" font-weight="700" fill="#004085">skill selector</text>
+      <text x="470" y="93" text-anchor="middle" font-size="10" font-style="italic" fill="#004085">“grasp handle”</text>
+      <line x1="550" y1="71" x2="576" y2="71" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arr-vpa)"/>
+
+      <rect x="580" y="40" width="160" height="62" rx="6" fill="#cce5ff" stroke="#004085" stroke-width="1.5"/>
+      <text x="660" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="#004085">JEPA predictor</text>
+      <text x="660" y="78" text-anchor="middle" font-size="10.5" fill="#004085">next latent milestone</text>
+      <text x="660" y="93" text-anchor="middle" font-size="10" font-style="italic" fill="#004085">(sub-goal threshold)</text>
+
+      <!-- Down into Stage 2 -->
+      <line x1="660" y1="102" x2="660" y2="168" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arr-vpa)"/>
+
+      <!-- Row 2 (right to left) -->
+      <rect x="580" y="172" width="160" height="62" rx="6" fill="#d4edda" stroke="#155724" stroke-width="1.5"/>
+      <text x="660" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#155724">Flow-matching solver</text>
+      <text x="660" y="213" text-anchor="middle" font-size="10.5" fill="#155724">fixed K integration steps</text>
+      <line x1="580" y1="203" x2="554" y2="203" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arr-vpa)"/>
+
+      <rect x="390" y="172" width="160" height="62" rx="6" fill="#d4edda" stroke="#155724" stroke-width="1.5"/>
+      <text x="470" y="196" text-anchor="middle" font-size="12" font-weight="700" fill="#155724">Full action chunk</text>
+      <text x="470" y="213" text-anchor="middle" font-size="10.5" fill="#155724">continuous arm + gripper</text>
+      <line x1="390" y1="203" x2="364" y2="203" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arr-vpa)"/>
+
+      <rect x="200" y="172" width="160" height="62" rx="6" fill="#f8f9fa" stroke="#6c757d" stroke-width="1.5"/>
+      <text x="280" y="198" text-anchor="middle" font-size="12" font-weight="600" fill="#212529">Robot executes</text>
+      <text x="280" y="215" text-anchor="middle" font-size="10.5" fill="#6c757d">no pause between chunks</text>
+
+      <!-- Loop back -->
+      <path d="M 200 203 L 90 203 L 90 106" stroke="#6c757d" stroke-width="1.5" fill="none" stroke-dasharray="4 3" marker-end="url(#arr-vpa)"/>
+      <text x="100" y="222" font-size="10.5" fill="#6c757d">new observation</text>
+
+      <!-- Cost annotation -->
+      <text x="10" y="284" font-size="11.5" font-weight="600" fill="#212529">Cost per decision: K + 3 network evaluations, independent of chunk length or instruction length.</text>
+    </svg>
+  </figure>
+
+  <div class="sl-takeaway">
+    <strong>Key takeaway:</strong> latency no longer depends on token count or sentence structure.
+    Every decision costs the same fixed amount of compute, so the robot receives a fresh, smooth
+    trajectory every 10–14&nbsp;ms instead of waiting for a language model to finish “speaking.”
+  </div>
+</div>

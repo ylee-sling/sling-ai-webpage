@@ -1,0 +1,55 @@
+{%- assign groups = "team,advisors" | split: "," -%}
+<div class="sl-section" id="team">
+  <p class="sl-kicker">Team</p>
+  <h2 class="sl-h2">Built by formal-methods researchers</h2>
+  {%- for g in groups %}
+    {%- assign people = site.data.team | where: "group", g -%}
+    {%- if people.size > 0 %}
+    {%- if g == "advisors" %}<h3 class="sl-h3">Advisors</h3>{% endif %}
+    <div class="sl-grid sl-grid--team">
+      {%- for p in people %}
+      <div class="sl-person">
+        {%- if p.photo and p.photo != "" %}
+        <img class="sl-person__photo" src="{{ p.photo | relative_url }}" alt="Portrait of {{ p.name }}" width="112" height="112">
+        {%- else %}
+        {%- assign initials = p.name | remove: "Dr. " | split: " " -%}
+        <div class="sl-person__photo sl-person__photo--initials" aria-hidden="true">{{ initials[0] | slice: 0 }}{{ initials[1] | slice: 0 }}</div>
+        {%- endif %}
+        <div class="sl-person__body">
+          <h3 class="sl-person__name">{{ p.name }}</h3>
+          <p class="sl-person__role">{{ p.role }}</p>
+          <p class="sl-person__bio">{{ p.bio }}</p>
+          {%- if p.highlights %}
+          <ul class="sl-person__highlights">
+            {%- for h in p.highlights %}<li>{{ h }}</li>{% endfor %}
+          </ul>
+          {%- endif %}
+          <div class="sl-person__links">
+            {%- if p.links.linkedin and p.links.linkedin != "" %}
+            <a class="sl-btn sl-btn--linkedin" href="{{ p.links.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+            {%- endif %}
+            {%- if p.links.publications and p.links.publications != "" %}
+            {%- assign first_char = p.links.publications | slice: 0 -%}
+            {%- if first_char == "/" %}
+            <a class="sl-btn" href="{{ p.links.publications | relative_url }}">Publications</a>
+            {%- else %}
+            <a class="sl-btn" href="{{ p.links.publications }}" target="_blank" rel="noopener noreferrer">Publications</a>
+            {%- endif %}
+            {%- endif %}
+            {%- if p.links.scholar and p.links.scholar != "" %}
+            <a class="sl-btn" href="{{ p.links.scholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            {%- endif %}
+            {%- if p.links.website and p.links.website != "" %}
+            <a class="sl-btn" href="{{ p.links.website }}" target="_blank" rel="noopener noreferrer">Website</a>
+            {%- endif %}
+            {%- if p.links.email and p.links.email != "" %}
+            <a class="sl-btn" href="mailto:{{ p.links.email }}">{{ p.links.email }}</a>
+            {%- endif %}
+          </div>
+        </div>
+      </div>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  {%- endfor %}
+</div>

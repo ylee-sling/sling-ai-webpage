@@ -25,6 +25,11 @@ nav_order: 4
     Theory of Computation, Symbolic Logic, Separation Logic, Program Verification</p>
     <p><strong>Languages & Technical Skills</strong><br>
     C, Korean (Native), English (Fluent), Japanese (Fluent, JLPT N1)</p>
+    <p>
+      <a class="btn btn-blue mr-2" href="https://www.linkedin.com/in/yeonseok/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+      <a class="btn mr-2" href="#publications">Publications</a>
+      <a class="btn" href="mailto:ylee@sling.ai.kr">ylee@sling.ai.kr</a>
+    </p>
   </div>
 </div>
 
@@ -67,7 +72,24 @@ nav_order: 4
 
 ---
 
-### Selected Papers
+### Publications
+
+#### Preprints
+
+**2026** | **Vision-Predictor-Action: Towards Efficient Embodied AI via Neuro-Symbolic JEPA Predictors**
+  * arXiv preprint (cs.RO / cs.LG / cs.LO). Code and model weights are public.
+  * [arXiv:2610.15556](https://arxiv.org/abs/2610.15556){: target="_blank" rel="noopener noreferrer" } · [GitHub](https://github.com/ylee-sling/Vision-Predictor-Action){: target="_blank" rel="noopener noreferrer" } · [Hugging Face](https://huggingface.co/ylee-sling/vpa-libero10){: target="_blank" rel="noopener noreferrer" }
+
+**2026** | **Neuro-Symbolic AI for Korean Criminal Law: Sentencing Prediction and Document Drafting**
+  * [DOI: 10.48550/arXiv.2607.19740](https://doi.org/10.48550/arXiv.2607.19740){: target="_blank" rel="noopener noreferrer" }
+
+**2026** | **Separation Logic for Memory Conflict Detection in High-Level Synthesis**
+  * [DOI: 10.48550/arXiv.2607.07126](https://doi.org/10.48550/arXiv.2607.07126){: target="_blank" rel="noopener noreferrer" }
+
+**2026** | Two preprints on Separation Logic-based G-code collision verification and neuro-symbolic G-code generation
+  * [DOI: 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437){: target="_blank" rel="noopener noreferrer" } · [DOI: 10.48550/arXiv.2605.10568](https://doi.org/10.48550/arXiv.2605.10568){: target="_blank" rel="noopener noreferrer" }
+
+#### Peer-Reviewed Papers
 
 
 **2025** | **Incorrectness separation logic with arrays and pointer arithmetic**

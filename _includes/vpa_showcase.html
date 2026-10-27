@@ -1,0 +1,23 @@
+{%- assign vpa = site.data.vpa -%}
+<div class="sl-section" id="vpa">
+  <p class="sl-kicker">Solution #1 · Flagship</p>
+  <h2 class="sl-h2">Vision-Predictor-Action (VPA)</h2>
+  <div class="sl-split">
+    <div class="sl-panel sl-panel--problem">
+      <h3>The bottleneck: why current AI robots hesitate</h3>
+      <ul>
+        <li>Most robot foundation models (VLAs) reuse a large language model and emit movement coordinates <strong>one token at a time</strong>, like writing a sentence word by word.</li>
+        <li>Every extra token is another full pass through a billion-parameter decoder, so latency grows with the length of the motion.</li>
+        <li>In practice that means control loops of only a few hertz (often <strong>under 5&nbsp;Hz</strong>): the arm pauses mid-motion, overshoots, and drops objects.</li>
+      </ul>
+    </div>
+    <div class="sl-panel sl-panel--solution">
+      <h3>The VPA breakthrough</h3>
+      <ul>
+        <li><strong>No token loop.</strong> VPA removes the autoregressive decoder entirely and controls the robot in a compact latent space.</li>
+        <li><strong>Milestones + math.</strong> A neuro-symbolic planner sets the next visual milestone; a flow-matching solver computes the full continuous motion toward it.</li>
+        <li><strong>Constant cost.</strong> Each decision is a fixed <em>K</em>&nbsp;+&nbsp;3 network evaluations, no matter how long the motion chunk is.</li>
+      </ul>
+    </div>
+  </div>
+</div>

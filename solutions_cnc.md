@@ -2,7 +2,7 @@
 title: CNC Solutions
 parent: Solutions
 layout: default
-nav_order: 1
+nav_order: 2
 ---
 
 # Formal Verification of CNC Trajectories via Separation Logic

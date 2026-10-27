@@ -2,7 +2,7 @@
 title: Legaltech Solutions
 parent: Solutions
 layout: default
-nav_order: 3
+nav_order: 4
 ---
 
 # Neuro-Symbolic AI for Summary Proceeding Automation

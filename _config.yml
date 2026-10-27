@@ -15,6 +15,7 @@ plugins:
 
 # Just the Docs settings
 aux_links:
+  "VPA Paper (arXiv)": "https://arxiv.org/abs/2610.15556"
   "Contact CEO": "mailto:ylee@sling.ai.kr" # Enter the label and email address
 
 exclude:

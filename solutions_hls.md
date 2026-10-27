@@ -2,7 +2,7 @@
 title: HLS Solutions
 parent: Solutions
 layout: default
-nav_order: 2
+nav_order: 3
 ---
 
 # Spatial Logic Solutions for High-Performance Hardware Synthesis

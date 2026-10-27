@@ -2,27 +2,38 @@
 layout: default
 title: Home
 nav_order: 1
+description: "SLING AI Inc. — Vision-Predictor-Action (VPA): real-time, hesitation-free robot intelligence with 10–14 ms decisions. Mathematical safety for generative AI in physical systems."
 ---
 
-![SLING AI Logo]({% link assets/images/company_logo.png %}){: width="250" }
-{: .mt-4 }
+{% include hero.html %}
 
-## "Symbolic Logic Inspires Normal and General AI"
-{: .fs-6 .fw-300 }
+{% include vpa_showcase.html %}
 
-SLING AI develops technology designed to **help prevent AI models from violating predefined operational rules**, improving system reliability when working with generative architectures. Grounded in Separation Logic, our verification framework enables organizations to deploy AI safely in mission-critical environments.
+{% include architecture.html %}
 
-[View Solutions]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
+{% include benchmarks.html %}
+
+{% include demo_section.html %}
+
+{% include business_model.html %}
+
+{% include team.html %}
 
 ---
 
-## What We Do
+## Also from SLING AI: Formal Verification for High-Stakes Automation
 
-While modern Large Language Models (LLMs) offer strong natural language capabilities, they can produce **hallucinations**—generating plausible but unverified or inaccurate information. In informal settings, this may be benign; however, in **high-stakes domains like precision manufacturing, chip design, or legal processing, unverified outputs present severe operational risks.**
+The same mathematical foundation behind VPA — **Separation Logic** and **SMT solvers** — powers our verification products. They check AI-generated outputs against formal rules *before* execution, so generative models can be used where a wrong answer is not an option.
 
-SLING AI cross-references AI outputs against formal mathematical rules (Separation Logic), verifying that **generated responses satisfy defined safety constraints prior to execution**. This approach enables organizations to integrate generative AI into core workflows with increased precision and control.
+| Solution | What it verifies |
+| :--- | :--- |
+| [**CNC Solutions**]({% link solutions_cnc.md %}) | G-code toolpaths are checked for collisions with fixtures and prohibited zones before the machine moves; LLM-generated G-code is corrected until it is provably safe. |
+| [**HLS Solutions**]({% link solutions_hls.md %}) | Non-linear memory-bank conflicts in FPGA High-Level Synthesis, detected at the LLVM IR level. |
+| [**Legaltech Solutions**]({% link solution_law.md %}) | Sentencing ranges and summary-indictment drafts computed by a formal logic engine instead of a probabilistic LLM. |
 
 ### Latest News
+
+**Oct. 2026** | VPA preprint published on arXiv ([2610.15556](https://arxiv.org/abs/2610.15556){: target="_blank" rel="noopener noreferrer" }) with LIBERO-10 checkpoints released on [Hugging Face](https://huggingface.co/ylee-sling/vpa-libero10){: target="_blank" rel="noopener noreferrer" }.
 
 **May 2026** | Two provisional patent applications filed for multi-tool path verification and Neuro-Symbolic G-code generation.
 
@@ -32,23 +43,6 @@ SLING AI cross-references AI outputs against formal mathematical rules (Separati
 
 ---
 
-## 3 Core Capabilities of SLING AI
-
-| Core Value | Description |
-| :--- | :--- |
-| **Output Filtering** | Filters AI-generated **hallucinations** against formal logical rules to improve output reliability. |
-| **Formal Safety Verification** | Evaluates spatial and operational constraints through mathematical modeling (**Formal Verification**) prior to system execution. |
-| **Domain-Tailored AI Integration** | Provides verification frameworks for AI Transformation (AX) across specialized sectors like manufacturing, hardware synthesis, and legaltech. |
-
----
-
-## Why SLING AI?
-
-1. **Mathematical Rigor**: We complement probabilistic AI models with formal verification methods, such as Separation Logic and SMT Solvers, to evaluate output bounds.
-2. **High-Stakes Domain Focus**: We provide guardrails for critical operations—such as 5-axis CNC machining, FPGA architecture synthesis, and legal summary proceedings—where operational accuracy is essential.
-3. **Specialized Expertise**: Our logical verification frameworks are designed by **Ph.D. researchers** specializing in the Theory of Computation and Automated Reasoning.
-
----
-
-[About the CEO]({% link representative.md %}){: .btn .btn-outline }
+[All Solutions]({% link solutions.md %}){: .btn .btn-blue .mr-2 }
+[About the CEO]({% link representative.md %}){: .btn .btn-outline .mr-2 }
 [Contact Us]({% link company.md %}){: .btn .btn-outline }
