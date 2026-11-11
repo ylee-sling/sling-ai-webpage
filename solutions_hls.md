@@ -1,15 +1,17 @@
 ---
-title: HLS Solutions
-parent: Solutions
-layout: default
-nav_order: 3
+title: "FPGA HLS memory verification"
+heading: "Separation logic for memory conflicts in FPGA high-level synthesis"
+seo_title: "FPGA HLS memory verification | SLING AI"
+description: >-
+  SLING AI research: detecting non-linear memory-bank conflicts in FPGA High-Level Synthesis at the LLVM IR level with separation logic. Patent application filed.
+lede: >-
+  Research that detects memory-bank conflicts in FPGA designs where polyhedral analysis gives up.
+crumbs:
+  - { label: "Products and research", url: "/solutions.html" }
 ---
+<div class="note"><p><strong>Research track.</strong> This is formal-verification research from SLING AI and the basis of part of our patent portfolio. It is not a current product line; our products are <a href="{{ '/solutions_vpa.html' | relative_url }}">VPA for robot arms</a> and <a href="{{ '/aero_vpa.html' | relative_url }}">Aero-VPA for drones</a>.</p></div>
 
-# Spatial Logic Solutions for High-Performance Hardware Synthesis
-{: .fs-9 }
-
-## The Challenge: Non-Linear Memory Bottlenecks in HLS
-{: .fs-6 .fw-300 }
+## The challenge: non-linear memory bottlenecks in HLS
 
 High-Level Synthesis (HLS) accelerates hardware development by converting high-level software code (C/C++) directly into parallel Register Transfer Level (RTL) hardware architectures, such as FPGAs. To improve performance, HLS tools unroll loops and partition arrays across isolated physical memory banks to enable concurrent data access within a single clock cycle.  
 

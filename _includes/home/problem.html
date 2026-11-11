@@ -1,0 +1,36 @@
+{%- assign p = t.problem -%}
+<section class="section section--mist" id="{{ p.id }}" aria-labelledby="{{ p.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ p.id }}-title">{{ p.title }}</h2>
+      <p>{{ p.intro }}</p>
+    </div>
+    <div class="problem">
+      <ul class="problem__points">
+        {%- for pt in p.points %}
+        <li>
+          <h3>{{ pt.title }}</h3>
+          <p>{{ pt.text }}</p>
+        </li>
+        {%- endfor %}
+      </ul>
+      <figure class="problem__flow">
+        <ol class="flow" aria-label="{{ p.flow_label }}">
+          {%- for s in p.flow %}
+          <li class="flow__step{% if s.slow %} flow__step--slow{% endif %}">
+            <strong>{{ s.name }}</strong>
+            {%- for line in s.lines %}
+            <span>{{ line }}</span>
+            {%- endfor %}
+            {%- if s.note %}
+            <em>{{ s.note }}</em>
+            {%- endif %}
+          </li>
+          {%- endfor %}
+        </ol>
+        <figcaption>{{ p.caption }}</figcaption>
+      </figure>
+    </div>
+    <p class="verdict">{{ p.verdict }}</p>
+  </div>
+</section>

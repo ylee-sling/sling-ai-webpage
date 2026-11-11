@@ -1,0 +1,65 @@
+{%- capture page_title -%}
+  {%- if page.seo_title -%}{{ page.seo_title }}{%- elsif page.title -%}{{ page.title }} | SLING AI{%- else -%}SLING AI{%- endif -%}
+{%- endcapture -%}
+{%- assign page_desc = page.description | default: site.description | strip_html | normalize_whitespace | escape -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title | strip | escape }}</title>
+<meta name="description" content="{{ page_desc }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- if page.layout == "home" %}
+<link rel="alternate" hreflang="en" href="{{ '/' | absolute_url }}">
+<link rel="alternate" hreflang="ko" href="{{ '/ko/' | absolute_url }}">
+<link rel="alternate" hreflang="x-default" href="{{ '/' | absolute_url }}">
+{%- endif %}
+<meta property="og:site_name" content="SLING AI Inc.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page_title | strip | escape }}">
+<meta property="og:description" content="{{ page_desc }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ '/assets/images/og-image.png' | absolute_url }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{% if page.lang == 'ko' %}ko_KR{% else %}en_US{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#22416C">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+<link rel="icon" href="{{ '/assets/images/favicon-32.png' | relative_url }}" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+{%- if page.layout == "home" %}
+{%- assign c = site.data.company %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ c.name | jsonify }},
+  "legalName": {{ c.name | jsonify }},
+  "alternateName": {{ c.name_ko | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "logo": {{ '/assets/images/company_logo.png' | absolute_url | jsonify }},
+  "description": {{ site.description | strip | jsonify }},
+  "email": {{ c.email | jsonify }},
+  "telephone": {{ c.phone | jsonify }},
+  "foundingDate": {{ c.founded | jsonify }},
+  "founder": {
+    "@type": "Person",
+    "name": "Yeonseok Lee",
+    "honorificPrefix": "Dr.",
+    "jobTitle": "Founder and CEO",
+    "sameAs": [{{ site.data.links.linkedin | jsonify }}]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Room 672, 5-6F, 185 Incheon Tower-daero, Yeonsu-gu",
+    "addressLocality": "Incheon",
+    "postalCode": "22009",
+    "addressCountry": "KR"
+  },
+  "sameAs": [{{ site.data.links.github | jsonify }}, {{ site.data.links.huggingface | jsonify }}]
+}
+</script>
+{%- endif %}

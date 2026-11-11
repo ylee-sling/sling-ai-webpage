@@ -1,20 +1,27 @@
 ---
-title: VPA Robot Intelligence
-parent: Solutions
-layout: default
-nav_order: 1
-description: "Vision-Predictor-Action (VPA): SLING AI's flagship embodied-AI model. 10–14 ms per decision, open paper, code, and weights."
+title: "VPA for robot arms"
+heading: "VPA for robot arms"
+seo_title: "VPA for robot arms | SLING AI"
+description: >-
+  Vision-Predictor-Action (VPA) for robot arms: a neuro-symbolic milestone planner plus a
+  flow-matching motion solver that plans each chunk of arm motion in 10–14 ms. Open paper,
+  code and weights.
+lede: >-
+  A robot-arm controller that skips word-by-word decoding: a neuro-symbolic milestone planner
+  picks the next step and a flow-matching solver writes the whole motion toward it.
+wide: true
+crumbs:
+  - { label: "Products and research", url: "/solutions.html" }
 ---
+{%- assign L = site.data.links -%}
+<div class="page-actions">
+  <a class="button button--primary button--small" href="{{ L.vpa_paper }}">Paper (Zenodo)</a>
+  <a class="button button--small" href="{{ L.vpa_arxiv }}">arXiv {{ site.data.vpa.paper.arxiv_id }}</a>
+  <a class="button button--small" href="{{ L.vpa_code }}">Code (GitHub)</a>
+  <a class="button button--small" href="{{ L.vpa_model }}">Model weights (Hugging Face)</a>
+</div>
 
-# Vision-Predictor-Action (VPA)
-{: .fs-9 }
-
-Real-time, hesitation-free robot intelligence: a neuro-symbolic milestone planner paired with a flow-matching motion engine.
-{: .fs-6 .fw-300 }
-
-[Read the paper (arXiv)](https://arxiv.org/abs/2610.15556){: .btn .btn-blue .mr-2 target="_blank" rel="noopener noreferrer" }
-[VPA core algorithm (GitHub)](https://github.com/ylee-sling/Vision-Predictor-Action){: .btn .mr-2 target="_blank" rel="noopener noreferrer" }
-[Model checkpoints (Hugging Face)](https://huggingface.co/ylee-sling/vpa-libero10){: .btn target="_blank" rel="noopener noreferrer" }
+<div class="note"><p><strong>Status:</strong> {{ site.data.vpa.status }}</p></div>
 
 {% include vpa_showcase.html %}
 
@@ -26,12 +33,15 @@ Real-time, hesitation-free robot intelligence: a neuro-symbolic milestone planne
 
 {% include business_model.html %}
 
----
+## Research and intellectual property
 
-## Research & Intellectual Property
+* **Paper:** “{{ site.data.vpa.paper.title }}”, {{ site.data.vpa.paper.date }}: [Zenodo]({{ L.vpa_paper }}), [arXiv:{{ site.data.vpa.paper.arxiv_id }}]({{ L.vpa_arxiv }})
+* **Earlier framework paper:** “NS-JEPA: Towards Efficient Embodied AI via Neuro-Symbolic Joint-Embedding Predictive Architecture”, September 2026: [Zenodo]({{ L.nsjepa_paper }})
+* **Code:** [github.com/ylee-sling/Vision-Predictor-Action]({{ L.vpa_code }}) (GPL-3.0)
+* **Weights:** [huggingface.co/ylee-sling/vpa-libero10]({{ L.vpa_model }}), one- and two-camera LIBERO-10 policies in PyTorch and safetensors formats
+* **Patents:** applications filed for VPA's core technology
+* **Same architecture for drones:** [Aero-VPA]({{ '/aero_vpa.html' | relative_url }})
 
-* **Paper**: ["Vision-Predictor-Action: Towards Efficient Embodied AI via Neuro-Symbolic JEPA Predictors" (arXiv:2610.15556, Oct. 2026)](https://arxiv.org/abs/2610.15556){: target="_blank" rel="noopener noreferrer" }
-* **Code**: [github.com/ylee-sling/Vision-Predictor-Action](https://github.com/ylee-sling/Vision-Predictor-Action){: target="_blank" rel="noopener noreferrer" } (GPL-3.0)
-* **Weights**: [huggingface.co/ylee-sling/vpa-libero10](https://huggingface.co/ylee-sling/vpa-libero10){: target="_blank" rel="noopener noreferrer" } — one- and two-camera LIBERO-10 policies in PyTorch and safetensors formats
+Commercial use inside a proprietary product needs a license from SLING AI.
 
-[Contact us about licensing]({% link company.md %}){: .btn .btn-outline }
+<p><a class="button" href="mailto:{{ site.data.company.email }}?subject=VPA%20licensing">Contact us about licensing</a></p>

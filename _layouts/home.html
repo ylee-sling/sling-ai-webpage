@@ -1,0 +1,19 @@
+---
+layout: base
+---
+{%- comment -%}
+  Home page for one language. The page sets `lang: en` or `lang: ko`;
+  every sentence comes from _data/home/<lang>.yml.
+{%- endcomment -%}
+{%- assign t = site.data.home[page.lang] | default: site.data.home.en -%}
+{% include home/hero.html %}
+{% include home/glance.html %}
+{% include home/problem.html %}
+{% include home/how.html %}
+{% include home/products.html %}
+{% include home/compare.html %}
+{% include home/business.html %}
+{% include home/traction.html %}
+{% include home/roadmap.html %}
+{% include home/team.html %}
+{% include home/company.html %}

@@ -1,0 +1,25 @@
+# Every external link on the site. Templates refer to these by key,
+# e.g. site.data.links.vpa_model. Change a URL here and it changes everywhere.
+
+huggingface: "https://huggingface.co/ylee-sling"
+github: "https://github.com/ylee-sling"
+linkedin: "https://www.linkedin.com/in/yeonseok/"
+
+# VPA (robot arms)
+vpa_model: "https://huggingface.co/ylee-sling/vpa-libero10"
+vpa_code: "https://github.com/ylee-sling/Vision-Predictor-Action"
+vpa_paper: "https://doi.org/10.5281/zenodo.22960919"
+vpa_arxiv: "https://arxiv.org/abs/2610.15556"
+vpa_results: "https://github.com/ylee-sling/Vision-Predictor-Action#results-on-libero-10-preliminary"
+
+# Aero-VPA (drones)
+aero_model: "https://huggingface.co/ylee-sling/aero-vpa"
+aero_data: "https://huggingface.co/datasets/ylee-sling/aero-vpa-benchmark"
+aero_code: "https://github.com/ylee-sling/Aero-VPA"
+aero_paper: "https://doi.org/10.5281/zenodo.23633375"
+
+# Other papers and IP
+nsjepa_paper: "https://doi.org/10.5281/zenodo.22493915"
+patent: "https://doi.org/10.8080/1020260033761"
+thesis: "http://hdl.handle.net/2237/0002014421"
+thesis_mirror: "https://doi.org/10.5281/zenodo.21979211"

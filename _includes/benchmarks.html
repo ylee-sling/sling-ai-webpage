@@ -1,19 +1,17 @@
 {%- assign vpa = site.data.vpa -%}
-<div class="sl-section" id="benchmarks">
-  <p class="sl-kicker">Benchmarks</p>
-  <h2 class="sl-h2">Measured, not projected</h2>
-  <div class="sl-grid sl-grid--metrics">
+{%- assign L = site.data.links -%}
+<section id="benchmarks">
+  <h2>Measured results</h2>
+  <dl class="spec">
     {%- for m in vpa.metrics %}
-    <div class="sl-metric">
-      <div class="sl-metric__value">{{ m.value }}</div>
-      <div class="sl-metric__label">{{ m.label }}</div>
-      <p class="sl-metric__detail">{{ m.detail }}</p>
-    </div>
+    <dt>{{ m.label }}</dt>
+    <dd><strong>{{ m.value }}</strong><small>{{ m.detail }}</small></dd>
     {%- endfor %}
-  </div>
-  <p class="sl-source">
-    Source: <a href="{{ vpa.links.arxiv }}" target="_blank" rel="noopener noreferrer">“{{ vpa.paper.title }}” (arXiv:{{ vpa.paper.arxiv_id }}, {{ vpa.paper.date }})</a>
-    and the <a href="{{ vpa.links.huggingface }}" target="_blank" rel="noopener noreferrer">LIBERO-10 model card</a>.
-    Verify every number yourself with the <a href="{{ vpa.links.github }}" target="_blank" rel="noopener noreferrer">open-source code</a>.
+  </dl>
+  <p class="figures-note">
+    Sources: “{{ vpa.paper.title }}” (<a href="{{ L.vpa_paper }}">Zenodo</a>,
+    <a href="{{ L.vpa_arxiv }}">arXiv:{{ vpa.paper.arxiv_id }}</a>, {{ vpa.paper.date }}) and the
+    <a href="{{ L.vpa_model }}">LIBERO-10 model card</a>. Every number can be rerun with the
+    <a href="{{ L.vpa_code }}">open-source code</a>.
   </p>
-</div>
+</section>

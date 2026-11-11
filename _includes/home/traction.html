@@ -1,0 +1,34 @@
+{%- assign tr = t.traction -%}
+<section class="section" id="{{ tr.id }}" aria-labelledby="{{ tr.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ tr.id }}-title">{{ tr.title }}</h2>
+    </div>
+    <div class="traction">
+      <dl class="spec">
+        {%- for r in tr.rows %}
+        <dt>{{ r.k }}</dt>
+        <dd>
+          <strong>{{ r.v }}</strong>
+          {%- if r.note %}<small>{{ r.note }}</small>{% endif %}
+          {%- if r.links %}
+          <span class="spec__links">
+            {%- for l in r.links %}
+            <a href="{{ site.data.links[l.key] }}">{{ l.label }}</a>
+            {%- endfor %}
+          </span>
+          {%- endif %}
+        </dd>
+        {%- endfor %}
+      </dl>
+      <div class="updates-block">
+        <h3 class="subhead">{{ tr.updates_title }}</h3>
+        <ol class="updates">
+          {%- for u in tr.updates %}
+          <li><span class="updates__date">{{ u.date }}</span><span>{{ u.text }}</span></li>
+          {%- endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

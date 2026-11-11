@@ -1,0 +1,343 @@
+# English home page (/). Every sentence on the page is here.
+# Links use keys from _data/links.yml. Simple HTML (<strong>, <br>) is allowed.
+
+ui:
+  skip: "Skip to content"
+  nav_label: "Main"
+  contact: "Contact us"
+  lang_switch_label: "한국어"
+  lang_switch_code: "ko"
+  lang_switch_url: "/ko/"
+  home_url: "/"
+  pause: "Pause video"
+  play: "Play video"
+
+nav:
+  - { id: "product", label: "Product" }
+  - { id: "how", label: "How it works" }
+  - { id: "business", label: "Business" }
+  - { id: "traction", label: "Traction" }
+  - { id: "team", label: "Team" }
+  - { id: "company", label: "Company" }
+
+hero:
+  title: "One lightweight AI brain for robot arms and drones"
+  lede: >-
+    SLING AI builds <strong>VPA (Vision-Predictor-Action)</strong>, control software that lets a
+    machine look through its camera, predict the next moment and move, with no large language
+    model in the loop. The same design steers a robot arm and a drone, and at about 70&nbsp;MB it
+    runs on the machine's own low-power board instead of a costly GPU.
+  primary: { label: "See how VPA works", href: "#how" }
+  secondary: { label: "Contact us", subject: "SLING AI inquiry" }
+  links:
+    - { label: "Open models on Hugging Face", key: "huggingface" }
+    - { label: "Source code on GitHub", key: "github" }
+  status_label: "Where we are"
+  status: >-
+    Working software in simulation, released openly as models, code and data. Tests on a real
+    robot arm and a real drone begin in the first half of 2027.
+  figure:
+    label: "VPA control loop: one model drives both a robot arm and a drone"
+    brain: "One VPA brain"
+    stages:
+      - { name: "Vision", verb: "sees" }
+      - { name: "Predictor", verb: "predicts" }
+      - { name: "Action", verb: "moves" }
+    note: "About 70 MB. Runs inside the device, no costly GPU."
+    chunk: "16 actions per decision"
+    arm: { name: "Robot arm", model: "VPA" }
+    drone: { name: "Drone", model: "Aero-VPA" }
+
+glance:
+  id: "glance"
+  title: "SLING AI at a glance"
+  intro: "What we sell, to whom, and how far along we are."
+  rows:
+    - k: "What we build"
+      v: >-
+        AI control software for physical machines. VPA turns camera images into the machine's
+        next 16 movements: joint commands for a robot arm (<strong>VPA</strong>) or speed and
+        heading commands for a drone (<strong>Aero-VPA</strong>).
+    - k: "Who it is for"
+      v: >-
+        Factories, logistics centers and drone operators that need machines to react quickly;
+        robot, drone and chip makers that want a small AI brain to ship inside their products.
+    - k: "How we make money"
+      v: >-
+        On-site software: a paid proof of concept, then an annual subscription priced at 20% of
+        the labor cost it saves. Technology licensing: a royalty for every product shipped with
+        VPA inside.
+    - k: "Stage"
+      v: >-
+        Working MVP in simulation, with models, code and benchmark data public. Pre-revenue;
+        first revenue planned for 2027.
+    - k: "Validation"
+      v: >-
+        KRW 200 million credit guarantee from Korea Credit Guarantee Fund (KODIT), October 2026.
+        One registered Korean patent.
+    - k: "Company"
+      v: >-
+        SLING AI Inc., founded February 2026 in Incheon, Republic of Korea. Founder and CEO:
+        Dr. Yeonseok Lee.
+
+problem:
+  id: "problem"
+  title: "Robot AI today is heavy, slow and built one machine at a time"
+  intro: >-
+    Most new robot models first turn what the camera sees into language, then reason with a
+    large language model (LLM) before they move.
+  points:
+    - title: "A huge brain"
+      text: "LLM-based robot AI carries 4 GB or more of weights and needs an expensive GPU."
+    - title: "Slow reactions"
+      text: "It computes its answer one word at a time, so it responds late when an obstacle suddenly appears."
+    - title: "A separate AI for every machine"
+      text: "Robot arms and drones each get their own AI, and a drone can rarely carry a large model at all."
+  flow:
+    - { name: "Camera", lines: ["Sees"] }
+    - { name: "LLM, 4 GB+", lines: ["Needs an expensive GPU", "Computes one word at a time"], note: "This is where it slows down", slow: true }
+    - { name: "Robot or drone", lines: ["Moves"], note: "Reacts late" }
+  flow_label: "The usual pipeline: camera, then a large language model, then the machine"
+  caption: "In the usual pipeline, turning what the machine sees into words is the heavy, slow step."
+  verdict: "Slow, heavy and fragmented: this is what keeps robots and drones out of everyday field work."
+
+how:
+  id: "how"
+  title: "How VPA works: see, predict, move"
+  intro: >-
+    VPA drops the language step. Four small networks run in a row, and the last one writes the
+    whole next stretch of motion in a single pass.
+  input: { name: "Camera", sub: "Same input for robot arms and drones" }
+  steps:
+    - { mark: "V", name: "See", term: "Vision", text: "Keeps only what matters in the image" }
+    - { mark: "", name: "Choose", term: "Skill selector", text: "Picks what to do next" }
+    - { mark: "P", name: "Preview", term: "Predictor", text: "Predicts the scene 0.1 s ahead" }
+    - { mark: "A", name: "Move", term: "Action", text: "Writes 16 actions at once" }
+  output: { title: "Next 16 actions in 0.012 s", sub: "Robot-arm joints or drone flight" }
+  bracket: "No language step: 5 network calls plan the whole continuous motion."
+  spec_title: "Key numbers"
+  spec:
+    - k: "Time to plan the next 16 actions"
+      v: "12 ms, about a tenth of a blink"
+      note: "VPA measured on an Apple M4 chip"
+    - k: "Model size"
+      v: "About 70 MB, roughly the size of 15 songs"
+      note: "18.13 million parameters (Aero-VPA)"
+    - k: "Compared with a 4 GB LLM-based robot AI"
+      v: "About 1/50 the size"
+    - k: "Network calls per decision"
+      v: "Always 5, however long the motion"
+    - k: "Where it runs"
+      v: "On the machine's own low-power board"
+      note: "Aero-VPA is designed for the 15 W NVIDIA Jetson Orin Nano"
+    - k: "Where we train it"
+      v: "Google Cloud GPU virtual machines (NVIDIA L4)"
+      note: "The drone flight simulation (PX4 and Gazebo) runs there too"
+  example:
+    title: "Example: a drone flying through a forest to its goal"
+    rows:
+      - { k: "1. See (V)", v: "The camera locates the trees ahead." }
+      - { k: "2. Choose", v: "It picks “avoid the trees and keep moving forward”." }
+      - { k: "3. Preview (P)", v: "It predicts the next 0.1 s to spot where it could hit something." }
+      - { k: "4. Move (A)", v: "It sends 16 speed and heading commands at once." }
+      - { k: "Safety shield", v: "It remembers passed trees for 15 s, and slows down or backs off when it gets too close.", safe: true }
+  footnote: >-
+    70 MB refers to Aero-VPA's 18.13 million parameters stored at full precision. VPA for robot
+    arms is the same size class, under 20 million parameters.
+
+products:
+  id: "product"
+  title: "One VPA, two bodies"
+  intro: >-
+    The same architecture becomes VPA when trained on robot-arm data and Aero-VPA when trained on
+    drone data.
+  split: { brain: "The same VPA brain", left: "Trained on robot-arm data", right: "Trained on drone data" }
+  items:
+    - id: "vpa"
+      name: "VPA for robot arms"
+      tag: "Tested in simulation"
+      media: "video"
+      video: "/assets/media/task08_trial02_2cam.mp4"
+      poster: "/assets/media/task08_trial02_2cam.jpg"
+      media_alt: "Simulated robot arm placing two moka pots on a stove, seen from a room camera and a wrist camera"
+      caption: "What the robot sees: room camera (left) and wrist camera (right). Task: put both moka pots on the stove."
+      result_title: "Success rate on 10 household tasks"
+      result_note: "20 trials per task, first results"
+      bars:
+        - { label: "1 camera", value: 10.5, text: "10.5%" }
+        - { label: "2 cameras", value: 40.0, text: "40.0%, about 4×", strong: true }
+      links:
+        - { label: "Model", key: "vpa_model" }
+        - { label: "Code", key: "vpa_code" }
+        - { label: "Paper", key: "vpa_paper" }
+      details: { label: "Technical details", url: "/solutions_vpa.html" }
+    - id: "aero"
+      name: "Aero-VPA for drones"
+      tag: "Tested in simulated flights"
+      media: "forest"
+      media_img_alt: "Aero-VPA drone flight screen in the forest simulation"
+      media_alt: "Top view of a forest: the drone's camera view, the path flown so far with breadcrumbs, two remembered trees and the remaining route to the goal"
+      caption: "Seen from above: the camera's view, the path flown so far and trees kept in memory for 15 s. The map is only for you; the drone flies from its camera alone."
+      result_title: "Flights that reach the goal in a simulated forest"
+      result_note: "180 flights; crashes fell from 72% to 22%"
+      bars:
+        - { label: "No safety shield", value: 21.1, text: "21.1%" }
+        - { label: "With safety shield", value: 52.2, text: "52.2%, 2.5×", strong: true }
+      links:
+        - { label: "Model", key: "aero_model" }
+        - { label: "Flight records", key: "aero_data" }
+        - { label: "Code", key: "aero_code" }
+        - { label: "Paper", key: "aero_paper" }
+      details: { label: "Technical details", url: "/aero_vpa.html" }
+      watch: { label: "Watch flight videos", key: "aero_model" }
+  links_label: "Open release"
+  summary: "One VPA: the same architecture, about 70 MB, 5 network calls per decision, low-power boards."
+  note: "Results so far come from simulation. Tests on a real robot arm and a real drone are scheduled for the first half of 2027."
+  forest: { camera: "Camera view", memory: "15 s memory", start: "Start", goal: "Goal" }
+
+compare:
+  id: "compare"
+  title: "How VPA compares"
+  intro: >-
+    Robot AI today either runs a large language model or, for drones, builds a map before it can
+    plan. VPA does neither.
+  head: ["Approach", "Model size (parameters)", "Hardware needed", "How it produces motion", "Used for"]
+  rows:
+    - { name: "Large robot AI", ex: "Google and other big-tech labs; LLM-based", size: "3.3 billion to 55 billion", hw: "High-end GPU", method: "Turns what it sees into words, then reasons", use: "Robot arms" }
+    - { name: "Small robot AI", ex: "Open small models; LLM-based", size: "About 450 million", hw: "Standard GPU or PC", method: "Turns what it sees into words, then reasons", use: "Robot arms" }
+    - { name: "Map-based autonomous flight", ex: "Traditional approach: builds a map first", size: "Not applicable", hw: "Several sensors", method: "Builds a map, then computes a route", use: "Drones" }
+  ours: { name: "SLING AI", ex: "VPA and Aero-VPA", size: "About 18 million", hw: "Low-power edge board", method: "5 network calls, straight to motion", use: "Robot arms and drones, same architecture" }
+  points:
+    - { title: "Ultra-light", text: "1/100 the size of large robot AI, or smaller." }
+    - { title: "Fast reactions", text: "Every decision takes exactly 5 network calls." }
+    - { title: "One brain, two bodies", text: "The same architecture controls robot arms and drones." }
+    - { title: "Safety built in", text: "The safety shield cut drone crashes from 72% to 22%." }
+  footnote: >-
+    Model size is the number of parameters reported in public papers: Google RT-2 up to 55 billion,
+    OpenVLA 7 billion, π0 3.3 billion, SmolVLA 450 million.
+
+business:
+  id: "business"
+  title: "Business model"
+  intro: "Two revenue streams, both from the same VPA software."
+  models:
+    - name: "On-site software"
+      rows:
+        - { k: "Customers", v: "Factories, logistics centers and drone operators" }
+        - { k: "Price", v: "<strong>20% of the labor cost the software saves</strong>" }
+        - { k: "Sales path", v: "Paid proof of concept (PoC), then an annual subscription" }
+    - name: "Technology licensing"
+      rows:
+        - { k: "Customers", v: "Robot, drone and chip makers" }
+        - { k: "Price", v: "Royalty per unit shipped" }
+        - { k: "Sales path", v: "The free open release builds adoption; <strong>products sold with VPA inside need a paid license</strong>" }
+  market_title: "Market"
+  market:
+    - { level: "Worldwide", text: "Robotics and AI: KRW 250 trillion. Drones: USD 59.2 billion (2032 forecast)." }
+    - { level: "Korea, where we start", text: "Smart factories and robots: KRW 11 trillion. Drones: KRW 1.1 trillion (2023)." }
+    - { level: "Our first targets", text: "Robots for logistics and precision manufacturing: KRW 1 trillion. Drone software: KRW 163.4 billion (2023)." }
+  market_line: "One VPA lets us go after both markets at the same time."
+  market_source: "Sources: Korea Ministry of Land, Infrastructure and Transport, 2024 Drone Industry Survey; IMARC."
+  why_now_title: "Why now"
+  why_now: "Demand for robots and drones is rising fast, and the cost of high-end GPUs is what holds deployment back."
+
+traction:
+  id: "traction"
+  title: "Traction so far"
+  rows:
+    - k: "Public validation"
+      v: "KRW 200 million credit guarantee from Korea Credit Guarantee Fund (KODIT)"
+      note: "Selected for the Innovative Startup Partnership Guarantee, October 2026"
+    - k: "Simulation results"
+      v: "Robot arm: 40% success on household tasks. Drone: 52% of flights reach the goal and 78% fly without a crash."
+    - k: "Open models"
+      v: "2 AI models, with their code and data, free to download"
+      links:
+        - { label: "Hugging Face", key: "huggingface" }
+        - { label: "GitHub", key: "github" }
+    - k: "Papers"
+      v: "3 preprints on Zenodo; the VPA paper is also on arXiv"
+      links:
+        - { label: "Aero-VPA", key: "aero_paper" }
+        - { label: "VPA", key: "vpa_paper" }
+        - { label: "NS-JEPA", key: "nsjepa_paper" }
+        - { label: "arXiv", key: "vpa_arxiv" }
+    - k: "Patents"
+      v: "1 registered Korean patent, plus several applications filed, including VPA's core technology"
+      links:
+        - { label: "Patent record", key: "patent" }
+  updates_title: "Recent updates"
+  updates:
+    - { date: "Oct 2026", text: "Selected by KODIT for the Innovative Startup Partnership Guarantee (KRW 200 million)." }
+    - { date: "Oct 2026", text: "Aero-VPA preprint published on Zenodo. Its model weights and full benchmark data are public on Hugging Face." }
+    - { date: "Oct 2026", text: "VPA preprint published on Zenodo and arXiv (2610.15556), with LIBERO-10 checkpoints on Hugging Face." }
+    - { date: "Sep 2026", text: "NS-JEPA preprint published on Zenodo." }
+    - { date: "Feb 2026", text: "SLING AI Inc. founded in Incheon, Republic of Korea." }
+
+roadmap:
+  id: "roadmap"
+  title: "Milestones"
+  items:
+    - { when: "2026", state: "Done", done: true, lines: ["Simulation validation and full open release", "KODIT credit guarantee, KRW 200 million"] }
+    - { when: "First half of 2027", lines: ["Tests on a real robot arm and drone", "1–2 paid proofs of concept"] }
+    - { when: "Second half of 2027", lines: ["Field deployment and first license contract", "Government R&D program (TIPS)"] }
+    - { when: "2028", lines: ["Expansion to robot and drone makers", "Series A investment"] }
+
+team:
+  id: "team"
+  title: "Team"
+  intro: "AI control expertise grounded in mathematical proof."
+  ceo:
+    name: "Dr. Yeonseok Lee"
+    role: "Founder and CEO"
+    degree: "Ph.D. in Informatics, Nagoya University (2026)"
+    photo_alt: "Portrait of Dr. Yeonseok Lee"
+    bullets:
+      - "Specialty: proving with mathematics that a program runs without errors (formal verification)"
+      - "3 peer-reviewed papers at international venues"
+      - "Designed and built VPA and Aero-VPA, as sole author of the papers and the code"
+      - "Hanyang University; Republic of Korea Air Force aircraft weapons maintenance; NTT DATA group, Japan"
+    links:
+      - { label: "Doctoral dissertation", key: "thesis" }
+      - { label: "Dissertation mirror", key: "thesis_mirror" }
+      - { label: "LinkedIn", key: "linkedin" }
+    profile: { label: "Full profile and publications", url: "/representative.html" }
+  hiring_title: "Hiring in the 12 months after investment"
+  hiring:
+    - "Embedded engineer for robots and drones (1)"
+    - "AI training and control engineer (1)"
+  vision_title: "Vision"
+  vision: "One lightweight brain that moves every robot and drone."
+  quote: "Innovating AI control by combining theoretical rigor with hands-on field experience."
+
+company:
+  id: "company"
+  title: "Company and contact"
+  labels:
+    name: "Legal name"
+    ceo: "CEO"
+    founded: "Founded"
+    brn: "Business registration no."
+    crn: "Corporate registration no."
+    address: "Address"
+    email: "Email"
+    phone: "Phone"
+  contact_title: "Talk to us"
+  contact_text: "Ask about a paid proof of concept, a technology license or investment."
+  contact_button: "Email ylee@sling.ai.kr"
+  details: { label: "Full company information", url: "/company.html" }
+
+footer:
+  pages_title: "Pages"
+  pages:
+    - { label: "VPA for robot arms", url: "/solutions_vpa.html" }
+    - { label: "Aero-VPA for drones", url: "/aero_vpa.html" }
+    - { label: "Products and research", url: "/solutions.html" }
+    - { label: "CEO profile", url: "/representative.html" }
+    - { label: "Company", url: "/company.html" }
+  elsewhere_title: "Elsewhere"
+  elsewhere:
+    - { label: "Hugging Face", key: "huggingface" }
+    - { label: "GitHub", key: "github" }
+    - { label: "LinkedIn", key: "linkedin" }
+  rights: "© 2026 SLING AI Inc."

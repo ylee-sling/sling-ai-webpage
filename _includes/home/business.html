@@ -1,0 +1,38 @@
+{%- assign b = t.business -%}
+<section class="section section--mist" id="{{ b.id }}" aria-labelledby="{{ b.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ b.id }}-title">{{ b.title }}</h2>
+      <p>{{ b.intro }}</p>
+    </div>
+    <div class="business">
+      <div class="models">
+        {%- for m in b.models %}
+        <article class="model">
+          <h3>{{ m.name }}</h3>
+          <dl class="model__rows">
+            {%- for r in m.rows %}
+            <dt>{{ r.k }}</dt>
+            <dd>{{ r.v }}</dd>
+            {%- endfor %}
+          </dl>
+        </article>
+        {%- endfor %}
+        <div class="why-now">
+          <h3>{{ b.why_now_title }}</h3>
+          <p>{{ b.why_now }}</p>
+        </div>
+      </div>
+      <div class="market-block">
+        <h3 class="subhead">{{ b.market_title }}</h3>
+        <ul class="market">
+          {%- for m in b.market %}
+          <li><span class="market__level">{{ m.level }}</span>{{ m.text }}</li>
+          {%- endfor %}
+        </ul>
+        <p class="market__line">{{ b.market_line }}</p>
+        <p class="source">{{ b.market_source }}</p>
+      </div>
+    </div>
+  </div>
+</section>

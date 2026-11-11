@@ -1,0 +1,70 @@
+{%- assign pr = t.products -%}
+{%- assign drone_img = site.static_files | where: "path", "/assets/media/drone_screen.png" | first -%}
+<section class="section section--mist" id="{{ pr.id }}" aria-labelledby="{{ pr.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ pr.id }}-title">{{ pr.title }}</h2>
+      <p>{{ pr.intro }}</p>
+    </div>
+
+    <svg class="split" viewBox="0 0 1000 64" aria-hidden="true" focusable="false">
+      <rect x="330" y="2" width="340" height="34" rx="17" fill="#0055A5"/>
+      <text x="500" y="24.5" text-anchor="middle" fill="#fff" font-size="15" font-weight="600">{{ pr.split.brain }}</text>
+      <path d="M330 19H246v38m424-38h84v38" fill="none" stroke="#0055A5" stroke-width="2"/>
+      <path d="m240 52 6 10 6-10zm508 0 6 10 6-10z" fill="#0055A5"/>
+      <text x="256" y="50" fill="#0055A5" font-size="13" font-weight="600">{{ pr.split.left }}</text>
+      <text x="744" y="50" text-anchor="end" fill="#0055A5" font-size="13" font-weight="600">{{ pr.split.right }}</text>
+    </svg>
+
+    <div class="products">
+      {%- for it in pr.items %}
+      <article class="product" id="product-{{ it.id }}" aria-labelledby="product-{{ it.id }}-title">
+        <header class="product__head">
+          <h3 id="product-{{ it.id }}-title">{{ it.name }}</h3>
+          <span class="tag">{{ it.tag }}</span>
+        </header>
+        <figure class="product__media">
+          <div class="product__frame">
+          {%- if it.media == "video" %}
+            <video src="{{ it.video | relative_url }}" poster="{{ it.poster | relative_url }}" width="1024" height="512"
+                   autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label="{{ it.media_alt }}"></video>
+            <button class="media-toggle" type="button" data-video-toggle data-pause="{{ t.ui.pause }}" data-play="{{ t.ui.play }}" aria-label="{{ t.ui.pause }}"></button>
+          {%- elsif drone_img %}
+            <img src="{{ drone_img.path | relative_url }}" alt="{{ it.media_img_alt | default: it.media_alt }}" loading="lazy">
+          {%- else %}
+            {% include svg/forest.html alt=it.media_alt id=it.id %}
+          {%- endif %}
+          </div>
+          <figcaption>{{ it.caption }}</figcaption>
+        </figure>
+        <div class="result">
+          <p class="result__title">{{ it.result_title }}<span>{{ it.result_note }}</span></p>
+          {%- for b in it.bars %}
+          <div class="bar{% if b.strong %} bar--strong{% endif %}">
+            <span class="bar__label">{{ b.label }}</span>
+            <span class="bar__track" aria-hidden="true"><span class="bar__fill" style="width: {{ b.value }}%"></span></span>
+            <span class="bar__value">{{ b.text }}</span>
+          </div>
+          {%- endfor %}
+        </div>
+        <div class="product__foot">
+          <p class="product__links"><span>{{ pr.links_label }}</span>
+            {%- for l in it.links %}
+            <a href="{{ site.data.links[l.key] }}">{{ l.label }}</a>
+            {%- endfor %}
+          </p>
+          <p class="product__more">
+            <a class="button button--small" href="{{ it.details.url | relative_url }}">{{ it.details.label }}</a>
+            {%- if it.watch %}
+            <a class="button button--small button--quiet" href="{{ site.data.links[it.watch.key] }}">{{ it.watch.label }}</a>
+            {%- endif %}
+          </p>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+
+    <p class="strip">{{ pr.summary }}</p>
+    <p class="footnote">{{ pr.note }}</p>
+  </div>
+</section>

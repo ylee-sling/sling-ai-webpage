@@ -1,0 +1,52 @@
+{%- assign h = t.hero -%}
+{%- assign f = h.figure -%}
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero__text">
+      <h1 id="hero-title" class="hero__title">{{ h.title }}</h1>
+      <p class="hero__lede">{{ h.lede }}</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="{{ h.primary.href }}">{{ h.primary.label }}</a>
+        <a class="button" href="mailto:{{ site.data.company.email }}?subject={{ h.secondary.subject | uri_escape }}">{{ h.secondary.label }}</a>
+      </div>
+      <ul class="hero__links">
+        {%- for l in h.links %}
+        <li><a href="{{ site.data.links[l.key] }}">{{ l.label }}</a></li>
+        {%- endfor %}
+      </ul>
+      <p class="hero__status"><strong>{{ h.status_label }}:</strong> {{ h.status }}</p>
+    </div>
+
+    <figure class="loop" aria-label="{{ f.label }}">
+      <div class="loop__body loop__body--arm">
+        {% include svg/arm.html %}
+        <strong>{{ f.arm.name }}</strong>
+        <span>{{ f.arm.model }}</span>
+      </div>
+      <div class="loop__link loop__link--arm" aria-hidden="true">
+        <span class="chunk chunk--live">{% for i in (0..15) %}<i style="--i:{{ 15 | minus: i }}"></i>{% endfor %}</span>
+        <svg class="loop__arrow" viewBox="0 0 64 16" focusable="false"><path d="M64 8H10"/><path d="M14 1 4 8l10 7"/></svg>
+        <span class="loop__label">{{ f.chunk }}</span>
+      </div>
+      <div class="loop__brain">
+        <p class="loop__brain-title">{{ f.brain }}</p>
+        <ol class="loop__stages">
+          {%- for s in f.stages %}
+          <li><strong>{{ s.name }}</strong><span>{{ s.verb }}</span></li>
+          {%- endfor %}
+        </ol>
+        <p class="loop__brain-note">{{ f.note }}</p>
+      </div>
+      <div class="loop__link loop__link--drone" aria-hidden="true">
+        <span class="chunk chunk--live">{% for i in (0..15) %}<i style="--i:{{ i }}"></i>{% endfor %}</span>
+        <svg class="loop__arrow" viewBox="0 0 64 16" focusable="false"><path d="M0 8h54"/><path d="M50 1l10 7-10 7"/></svg>
+        <span class="loop__label">{{ f.chunk }}</span>
+      </div>
+      <div class="loop__body loop__body--drone">
+        {% include svg/drone.html %}
+        <strong>{{ f.drone.name }}</strong>
+        <span>{{ f.drone.model }}</span>
+      </div>
+    </figure>
+  </div>
+</section>

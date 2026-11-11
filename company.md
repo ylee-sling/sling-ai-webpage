@@ -1,61 +1,50 @@
 ---
-title: Company
-layout: default
-nav_order: 5
+title: "Company"
+heading: "Company information"
+seo_title: "Company information | SLING AI"
+description: >-
+  SLING AI Inc. (슬링에이아이 주식회사), founded February 9, 2026 in Incheon, Republic of Korea.
+  Registration numbers, address and contact details.
+lede: >-
+  SLING AI Inc. develops VPA, lightweight AI control software for robot arms and drones,
+  and licenses it to the companies that build and run them.
 ---
+{%- assign c = site.data.company -%}
+{%- assign tel = c.phone | remove: " " | remove: "-" -%}
 
-# Company
-{: .fs-9 }
+## Corporate overview
 
-SLING AI Inc. develops symbolic logic and formal verification solutions to improve AI reliability across industrial and high-stakes operations.
-{: .fs-6 .fw-300 }
+<dl class="spec">
+  <dt>Company name</dt>
+  <dd>{{ c.name }} ({{ c.name_ko }})</dd>
+  <dt>Founder and CEO</dt>
+  <dd>{{ c.ceo_en }}</dd>
+  <dt>Date of incorporation</dt>
+  <dd>{{ c.founded_en }}</dd>
+  <dt>Business registration no. (사업자등록번호)</dt>
+  <dd>{{ c.business_registration }}</dd>
+  <dt>Corporate registration no. (법인등록번호)</dt>
+  <dd>{{ c.corporate_registration }}</dd>
+  <dt>Email</dt>
+  <dd><a href="mailto:{{ c.email }}">{{ c.email }}</a></dd>
+  <dt>Phone</dt>
+  <dd><a href="tel:{{ tel }}">{{ c.phone }}</a></dd>
+  <dt>Website</dt>
+  <dd><a href="{{ c.website }}">sling.ai.kr</a></dd>
+</dl>
 
----
+## What we do
 
-## Corporate Overview
-
-| Category | Details |
-| :--- | :--- |
-| **Company Name** | SLING AI Inc. (슬링에이아이 주식회사) |
-| **CEO & Founder** | Dr. Yeonseok Lee |
-| **Date of Incorporation** | February 9, 2026 |
-| **Phone** | +82 10-2158-9243 |
-| **Email** | [ylee@sling.ai.kr](mailto:ylee@sling.ai.kr) |
-| **Official Website** | [sling.ai.kr](https://www.sling.ai.kr) |
-
----
-
-## Business Category
-
-SLING AI provides specialized software solutions and technical services across information technology and engineering sectors.
-
-* **Industry**: Information and Communications; Professional, Scientific, and Technical Services
-* **Business Type**: 
-    * Intellectual Property (IP) Licensing and Implementation
-    * System Software Development and Supply
-    * Computer Systems Integration Services
-
----
-
-## Registration Information
-
-* **Business Registration Number (사업자등록번호)**: 399-88-03360
-* **Corporate Registration Number (법인등록번호)**: 120111-0151637
-
----
+* **Products:** [VPA for robot arms]({{ '/solutions_vpa.html' | relative_url }}) and [Aero-VPA for drones]({{ '/aero_vpa.html' | relative_url }}), AI control software that runs on the machine's own low-power board
+* **Revenue:** on-site software subscriptions after a paid proof of concept, and per-unit technology licensing for robot, drone and chip makers
+* **Industry:** information and communications; professional, scientific and technical services
+* **Business type:** system software development and supply; intellectual property licensing and implementation; computer systems integration
 
 ## Location
 
-* **Address (English)**: Room 672, 5-6F, 185 Incheon Tower-daero, Yeonsu-gu, Incheon, Republic of Korea (Postal Code: 22009)
-* **Address (Korean)**: 인천광역시 연수구 인천타워대로 185, 5-6층 672호 (송도동, 송도 센트럴비즈 한라) (우편번호: 22009)
+* **Address:** {{ c.address_en }}
+* **Address (Korean):** {{ c.address_ko }}
 
-*SLING AI is located in FASTFIVE Songdo Central. (슬링AI는 패스트파이브 송도센트럴점에 입주해 있습니다.)*  
-Please contact us via phone or email to schedule a meeting or visit.
+SLING AI is located in {{ c.office_en }} ({{ c.office_ko }}). Please contact us by email or phone to arrange a meeting or visit.
 
----
-
-## Learn More
-
-To explore our technical verification frameworks and domain solutions, please visit our home page.
-
-[Back to Home]({% link index.md %}){: .btn .btn-blue .mr-2 }
+<p><a class="button button--primary" href="mailto:{{ c.email }}?subject=SLING%20AI%20inquiry">Email {{ c.email }}</a> <a class="button" href="{{ '/' | relative_url }}">Back to home</a></p>

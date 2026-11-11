@@ -1,0 +1,56 @@
+{%- assign w = t.how -%}
+<section class="section" id="{{ w.id }}" aria-labelledby="{{ w.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ w.id }}-title">{{ w.title }}</h2>
+      <p>{{ w.intro }}</p>
+    </div>
+
+    <div class="pipeline">
+      <div class="pipe pipe--input">
+        <strong>{{ w.input.name }}</strong>
+        <span class="pipe__text">{{ w.input.sub }}</span>
+      </div>
+      {%- for s in w.steps %}
+      <div class="pipe{% if forloop.last %} pipe--act{% endif %}">
+        {%- if s.mark != "" %}
+        <span class="pipe__mark" aria-hidden="true">{{ s.mark }}</span>
+        {%- endif %}
+        <strong>{{ forloop.index }}. {{ s.name }}</strong>
+        <span class="pipe__term">({{ s.term }})</span>
+        <span class="pipe__text">{{ s.text }}</span>
+      </div>
+      {%- endfor %}
+      <div class="pipe pipe--output">
+        <span class="chunk chunk--out" aria-hidden="true">{% for i in (0..15) %}<i></i>{% endfor %}</span>
+        <strong>{{ w.output.title }}</strong>
+        <span class="pipe__text">{{ w.output.sub }}</span>
+      </div>
+      <p class="pipeline__bracket">{{ w.bracket }}</p>
+    </div>
+
+    <div class="how__grid">
+      <div>
+        <h3 class="subhead">{{ w.spec_title }}</h3>
+        <dl class="spec">
+          {%- for r in w.spec %}
+          <dt>{{ r.k }}</dt>
+          <dd><strong>{{ r.v }}</strong>{% if r.note %}<small>{{ r.note }}</small>{% endif %}</dd>
+          {%- endfor %}
+        </dl>
+      </div>
+      <div class="example">
+        <h3 class="example__title">{{ w.example.title }}</h3>
+        <dl class="example__rows">
+          {%- for r in w.example.rows %}
+          <div class="example__row{% if r.safe %} example__row--safe{% endif %}">
+            <dt>{{ r.k }}</dt>
+            <dd>{{ r.v }}</dd>
+          </div>
+          {%- endfor %}
+        </dl>
+      </div>
+    </div>
+    <p class="footnote">{{ w.footnote }}</p>
+  </div>
+</section>

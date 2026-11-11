@@ -1,0 +1,59 @@
+# ---------------------------------------------------------------------------
+# Aero-VPA (drones): numbers on /aero_vpa.html.
+# Sources: the Aero-VPA README and v1.1.0 release notes (GitHub), the Hugging
+# Face model card, and the preprint. Change numbers HERE, not in the template.
+# ---------------------------------------------------------------------------
+
+status: >-
+  Research prototype tested in simulated flights (PX4 SITL with Gazebo Harmonic). Code, trained
+  weights and every benchmark record are public; flights on a real drone are planned for the
+  first half of 2027.
+
+paper:
+  title: "Aero-VPA: Few-Step Flow-Matching Control over Non-Reconstructive JEPA Latents for Agile Flight on Edge Hardware"
+  date: "October 2026"
+
+parts:
+  - name: "World model"
+    text: >-
+      A Vision Transformer embeds each RGB-D camera frame (160 × 128). A JEPA predictor, trained to
+      predict the next embedding rather than pixels, forecasts the scene 0.1 s ahead; the
+      disagreement of its five heads measures uncertainty.
+  - name: "Actor"
+    text: >-
+      A primitive selector and a conditional flow-matching network turn the latents, the next
+      waypoint and the vehicle state into a 16-step velocity and yaw-rate chunk (0.32 s) in two
+      integration steps. A decision is five network calls, whatever the chunk length.
+  - name: "Safety shield"
+    text: >-
+      A deterministic runtime filter keeps 15 s of depth returns in a local 3-D memory, so trees
+      beside and behind the 73° camera stay known. It limits the approach speed to every
+      remembered obstacle, caps motion outside the field of view and backs off along the flown
+      path when too close. It uses no map.
+
+metrics:
+  - label: "Goal reached, recommended policy (r1)"
+    value: "52.2% with the shield, 21.1% without"
+    detail: "94 of 180 missions, 95% CI 45.0–59.4%; paired exact McNemar p = 1.2 × 10⁻¹⁰."
+  - label: "Goal reached, all six policies"
+    value: "42.8–52.2% with the shield"
+    detail: "Every checkpoint improved significantly with the shield."
+  - label: "Crashes"
+    value: "From 72–82% down to 22–43%"
+    detail: "Across the six checkpoints; r1 goes from 72% to 22%, i.e. 78% of its flights end without a crash."
+  - label: "Test setup"
+    value: "36 test worlds × 5 missions"
+    detail: "Forest worlds of three densities, disjoint from training; every policy flies the same missions."
+  - label: "Model size"
+    value: "18.13 million parameters"
+    detail: "About 36 MB at FP16 (72 MB at FP32)."
+  - label: "Control rate"
+    value: "100 Hz velocity setpoints to PX4"
+    detail: "Asynchronous two-rate stack designed for a 15 W NVIDIA Jetson Orin Nano."
+
+params:
+  - { module: "Vision encoder", count: "11.17M", role: "4-channel RGB-D (128 × 160) Vision Transformer to a 256-dim latent" }
+  - { module: "Primitive selector", count: "0.67M", role: "Chooses one of 6 flight primitives" }
+  - { module: "JEPA predictor", count: "2.72M", role: "5-head ensemble forecasting the next latent and its uncertainty" }
+  - { module: "Flow-matching solver", count: "3.57M", role: "16-knot, 4-DoF heading-frame velocity chunk" }
+  - { module: "Total", count: "18.13M", role: "About 36.3 MB of FP16 weights" }

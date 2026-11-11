@@ -1,0 +1,15 @@
+{%- assign g = t.glance -%}
+<section class="section section--glance" id="{{ g.id }}" aria-labelledby="{{ g.id }}-title">
+  <div class="wrap glance">
+    <div class="glance__head">
+      <h2 id="{{ g.id }}-title">{{ g.title }}</h2>
+      <p>{{ g.intro }}</p>
+    </div>
+    <dl class="spec spec--glance">
+      {%- for r in g.rows %}
+      <dt>{{ r.k }}</dt>
+      <dd>{{ r.v }}</dd>
+      {%- endfor %}
+    </dl>
+  </div>
+</section>

@@ -1,0 +1,35 @@
+{%- assign t = site.data.home[page.lang] | default: site.data.home.en -%}
+{%- assign f = t.footer -%}
+{%- assign c = site.data.company -%}
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <div class="site-footer__brand">
+      <img src="{{ '/assets/images/company_logo.png' | relative_url }}" alt="SLING AI Inc." width="131" height="48" loading="lazy">
+      <p class="motto"><b>S</b>ymbolic <b>L</b>ogic <b>I</b>nspires <b>N</b>ormal and <b>G</b>eneral AI</p>
+      <p class="site-footer__contact">
+        <a href="mailto:{{ c.email }}">{{ c.email }}</a><br>
+        {% if page.lang == "ko" %}{{ c.address_ko }}{% else %}{{ c.address_en }}{% endif %}
+      </p>
+    </div>
+    <nav class="site-footer__col" aria-labelledby="footer-pages">
+      <h2 id="footer-pages">{{ f.pages_title }}</h2>
+      <ul>
+        {%- for p in f.pages %}
+        <li><a href="{{ p.url | relative_url }}">{{ p.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="site-footer__col">
+      <h2>{{ f.elsewhere_title }}</h2>
+      <ul>
+        {%- for l in f.elsewhere %}
+        <li><a href="{{ site.data.links[l.key] }}">{{ l.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="wrap site-footer__base">
+    <p>{{ f.rights }}</p>
+    <p>{% if page.lang == "ko" %}사업자등록번호{% else %}Business registration no.{% endif %} {{ c.business_registration }}</p>
+  </div>
+</footer>

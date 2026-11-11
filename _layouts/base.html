@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+{%- assign t = site.data.home[page.lang] | default: site.data.home.en %}
+<a class="skip-link" href="#main">{{ t.ui.skip }}</a>
+{% include header.html %}
+<main id="main" tabindex="-1">
+{{ content }}
+</main>
+{% include footer.html %}
+<script>
+  // Off-site links open in a new tab; links that already set a target are left alone.
+  document.querySelectorAll('a[href^="http"]').forEach(function (a) {
+    if (a.hostname === window.location.hostname || a.hasAttribute('target')) return;
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+  });
+  // Demo videos: a play/pause button on each, and no autoplay for visitors who ask for reduced motion.
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('[data-video-toggle]').forEach(function (btn) {
+    var v = btn.parentElement.querySelector('video');
+    if (!v) return;
+    function sync() {
+      var paused = v.paused;
+      btn.dataset.state = paused ? 'paused' : 'playing';
+      btn.setAttribute('aria-label', paused ? btn.dataset.play : btn.dataset.pause);
+    }
+    if (reduceMotion) { v.removeAttribute('autoplay'); v.pause(); }
+    btn.addEventListener('click', function () { if (v.paused) { v.play(); } else { v.pause(); } });
+    v.addEventListener('play', sync);
+    v.addEventListener('pause', sync);
+    sync();
+  });
+</script>
+</body>
+</html>

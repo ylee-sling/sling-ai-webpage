@@ -1,0 +1,325 @@
+# 한국어 홈 페이지 (/ko/). 화면에 보이는 문장은 모두 여기 있습니다.
+# 링크는 _data/links.yml 의 키를 씁니다. 간단한 HTML(<strong>, <br>)을 쓸 수 있습니다.
+
+ui:
+  skip: "본문으로 건너뛰기"
+  nav_label: "주 메뉴"
+  contact: "문의하기"
+  lang_switch_label: "English"
+  lang_switch_code: "en"
+  lang_switch_url: "/"
+  home_url: "/ko/"
+  pause: "영상 일시정지"
+  play: "영상 재생"
+
+nav:
+  - { id: "product", label: "제품" }
+  - { id: "how", label: "작동 원리" }
+  - { id: "business", label: "사업 모델" }
+  - { id: "traction", label: "성과" }
+  - { id: "team", label: "팀" }
+  - { id: "company", label: "회사 정보" }
+
+hero:
+  title: "로봇도, 드론도 움직이는 하나의 AI 두뇌"
+  lede: >-
+    슬링에이아이는 <strong>VPA(Vision-Predictor-Action)</strong>를 만듭니다. 카메라로 보고, 다음 순간을
+    예측하고, 바로 움직이는 로봇 제어 AI입니다. 중간에 거대 언어모델(LLM)을 거치지 않습니다. 같은
+    구조로 로봇팔과 드론을 모두 제어하며, 크기가 약 70&nbsp;MB라 고가 GPU 없이 기기 안의 저전력
+    보드에서 작동합니다.
+  primary: { label: "작동 원리 보기", href: "#how" }
+  secondary: { label: "문의하기", subject: "슬링에이아이 문의" }
+  links:
+    - { label: "Hugging Face 공개 모델", key: "huggingface" }
+    - { label: "GitHub 공개 코드", key: "github" }
+  status_label: "현재 단계"
+  status: >-
+    시뮬레이션에서 작동을 검증했고, 모델·코드·데이터를 모두 공개했습니다. 실물 로봇팔·드론 시험은
+    2027년 상반기에 시작합니다.
+  figure:
+    label: "VPA 제어 흐름: 하나의 모델이 로봇팔과 드론을 모두 움직임"
+    brain: "하나의 VPA 두뇌"
+    stages:
+      - { name: "Vision", verb: "보기" }
+      - { name: "Predictor", verb: "예측" }
+      - { name: "Action", verb: "움직임" }
+    note: "약 70 MB, 고가 GPU 없이 기기 안에서 작동"
+    chunk: "한 번에 동작 16개"
+    arm: { name: "로봇팔", model: "VPA" }
+    drone: { name: "드론", model: "Aero-VPA" }
+
+glance:
+  id: "glance"
+  title: "한눈에 보는 슬링에이아이"
+  intro: "무엇을, 누구에게 팔고, 지금 어디까지 왔는지."
+  rows:
+    - k: "만드는 것"
+      v: >-
+        기계를 움직이는 AI 제어 소프트웨어입니다. 카메라 영상을 받아 다음 동작 16개를 한 번에
+        만듭니다. 로봇팔에는 관절 명령(<strong>VPA</strong>), 드론에는 속도·방향 비행 명령(<strong>Aero-VPA</strong>)을 냅니다.
+    - k: "고객"
+      v: >-
+        빠른 반응이 필요한 공장·물류센터·드론 운용사, 그리고 자사 제품에 작은 AI 두뇌를 넣고 싶은
+        로봇·드론·칩 제조사입니다.
+    - k: "수익 모델"
+      v: >-
+        현장 소프트웨어: 유료 PoC 후 연간 이용료, 가격은 아낀 인건비의 20%입니다. 기술 사용료:
+        VPA를 넣어 판매하는 제품 1대당 로열티입니다.
+    - k: "단계"
+      v: >-
+        시뮬레이션에서 작동하는 MVP이며 모델·코드·벤치마크 데이터를 공개했습니다. 현재 연구개발
+        단계이며 첫 매출은 2027년 목표입니다.
+    - k: "검증"
+      v: "신용보증기금 혁신스타트업 협약보증 2억 원 선정(2026년 10월), 특허 등록 1건."
+    - k: "회사"
+      v: "슬링에이아이 주식회사, 2026년 2월 인천 설립. 대표이사 이연석 박사."
+
+problem:
+  id: "problem"
+  title: "문제: 무겁고, 느리고, 제각각인 로봇 AI"
+  intro: "요즘 로봇 AI는 본 것을 먼저 ‘말’로 바꾼 뒤, 거대 언어모델(LLM)로 생각하고 나서야 움직입니다."
+  points:
+    - title: "거대한 두뇌"
+      text: "챗GPT 같은 4 GB 이상의 LLM을 쓰고, 고가 GPU가 꼭 필요합니다."
+    - title: "느린 반응"
+      text: "한 단어씩 계산하기 때문에 갑자기 나타난 장애물에 늦게 대응합니다."
+    - title: "기기마다 따로 개발"
+      text: "로봇팔과 드론의 AI가 제각각이고, 드론에는 큰 모델을 싣기도 어렵습니다."
+  flow:
+    - { name: "눈 (카메라)", lines: ["보기"] }
+    - { name: "LLM (4 GB+)", lines: ["고가 GPU 필수", "한 단어씩 계산"], note: "여기서 느려짐", slow: true }
+    - { name: "로봇·드론", lines: ["움직이기"], note: "반응이 늦음" }
+  flow_label: "기존 방식: 카메라, 거대 언어모델, 기계 순서로 처리"
+  caption: "기존 방식에서는 본 것을 ‘말’로 바꾸는 단계가 무겁고 느립니다."
+  verdict: "느리고, 무겁고, 제각각이라는 점이 로봇·드론 현장 보급의 걸림돌입니다."
+
+how:
+  id: "how"
+  title: "해결책: 보고, 예측하고, 바로 움직이는 VPA"
+  intro: "VPA에는 ‘말’ 단계가 없습니다. 작은 신경망 4개가 차례로 돌고, 마지막 신경망이 이어지는 동작 전체를 한 번에 씁니다."
+  input: { name: "카메라", sub: "로봇팔·드론 공통" }
+  steps:
+    - { mark: "V", name: "보기", term: "Vision", text: "영상에서 핵심만 요약" }
+    - { mark: "", name: "고르기", term: "Choose", text: "할 일 선택" }
+    - { mark: "P", name: "미리보기", term: "Predictor", text: "0.1초 뒤 상황 예측" }
+    - { mark: "A", name: "움직이기", term: "Action", text: "동작 16개를 한 번에" }
+  output: { title: "다음 동작 16개를 0.012초에", sub: "로봇팔 관절 · 드론 비행" }
+  bracket: "‘말’ 단계 없이, 5번 계산으로 연속 동작 전체를 계획합니다."
+  spec_title: "핵심 수치"
+  spec:
+    - k: "다음 동작 16개 계산"
+      v: "0.012초, 눈 깜빡임의 1/10"
+      note: "VPA, Apple M4 칩에서 측정"
+    - k: "AI 크기"
+      v: "약 70 MB, 노래 15곡 분량"
+      note: "파라미터 1,813만 개 기준 (Aero-VPA)"
+    - k: "4 GB급 LLM 로봇 AI 대비"
+      v: "약 1/50 크기"
+    - k: "결정 1번에 드는 계산"
+      v: "동작 길이와 상관없이 항상 5번"
+    - k: "작동 장소"
+      v: "기기 안의 저전력 소형 보드"
+      note: "Aero-VPA는 15 W급 NVIDIA Jetson Orin Nano용으로 설계"
+    - k: "학습 환경"
+      v: "Google Cloud GPU 가상머신 (NVIDIA L4)"
+      note: "드론 비행 시뮬레이션(PX4·Gazebo)도 같은 환경에서 실행"
+  example:
+    title: "예) 드론이 숲을 지나 목적지로 갈 때"
+    rows:
+      - { k: "① 보기 (V)", v: "카메라로 앞의 나무 위치를 파악합니다." }
+      - { k: "② 고르기", v: "할 일로 ‘나무 피해 전진’을 고릅니다." }
+      - { k: "③ 미리보기 (P)", v: "0.1초 뒤 상황을 예측해 부딪힐 곳을 확인합니다." }
+      - { k: "④ 움직이기 (A)", v: "속도·방향 비행 명령 16개를 한 번에 냅니다." }
+      - { k: "안전장치", v: "지나온 나무를 15초 동안 기억하고, 너무 가까우면 감속하거나 후진합니다.", safe: true }
+  footnote: "70 MB는 AI를 이루는 숫자(파라미터) 1,813만 개 기준입니다 (Aero-VPA). 로봇팔용 VPA도 2,000만 개 미만의 같은 크기급입니다."
+
+products:
+  id: "product"
+  title: "제품: 하나의 VPA, 두 개의 몸"
+  intro: "같은 구조를 로봇팔 데이터로 학습하면 VPA, 드론 데이터로 학습하면 Aero-VPA가 됩니다."
+  split: { brain: "같은 VPA 두뇌", left: "로봇팔 데이터로 학습", right: "드론 데이터로 학습" }
+  items:
+    - id: "vpa"
+      name: "로봇팔 · VPA"
+      tag: "시뮬레이션 시험"
+      media: "video"
+      video: "/assets/media/task08_trial02_2cam.mp4"
+      poster: "/assets/media/task08_trial02_2cam.jpg"
+      media_alt: "시뮬레이션 속 로봇팔이 커피포트 2개를 가스레인지 위로 옮기는 장면. 방 전체 카메라와 손목 카메라 화면"
+      caption: "로봇이 보는 화면 (왼쪽 방 전체, 오른쪽 손목). 예) 커피포트 2개를 가스레인지 위로 옮기기"
+      result_title: "10가지 집안일 성공률"
+      result_note: "작업당 20회, 1차 결과"
+      bars:
+        - { label: "카메라 1대", value: 10.5, text: "10.5%" }
+        - { label: "카메라 2대", value: 40.0, text: "40.0% (약 4배)", strong: true }
+      links:
+        - { label: "모델", key: "vpa_model" }
+        - { label: "코드", key: "vpa_code" }
+        - { label: "논문", key: "vpa_paper" }
+      details: { label: "기술 상세 (영문)", url: "/solutions_vpa.html" }
+    - id: "aero"
+      name: "드론 · Aero-VPA"
+      tag: "시뮬레이션 비행"
+      media: "forest"
+      media_img_alt: "숲 시뮬레이션 속 Aero-VPA 드론 비행 화면"
+      media_alt: "위에서 내려다본 숲: 드론 카메라 시야, 빵 부스러기로 표시한 지나온 길, 기억한 나무 2그루, 목적지까지 남은 길"
+      caption: "위에서 내려다본 모습: 카메라 시야, 지나온 길, 15초 동안 기억한 나무. 지도는 관전용이며, 드론은 지도 없이 카메라로 판단합니다."
+      result_title: "숲 시뮬레이션 목적지 도달률"
+      result_note: "180회 비행, 충돌 72% → 22%"
+      bars:
+        - { label: "안전장치 없음", value: 21.1, text: "21.1%" }
+        - { label: "안전장치 적용", value: 52.2, text: "52.2% (2.5배)", strong: true }
+      links:
+        - { label: "모델", key: "aero_model" }
+        - { label: "비행기록", key: "aero_data" }
+        - { label: "코드", key: "aero_code" }
+        - { label: "논문", key: "aero_paper" }
+      details: { label: "기술 상세 (영문)", url: "/aero_vpa.html" }
+      watch: { label: "비행 영상 보기", key: "aero_model" }
+  links_label: "공개 자료"
+  summary: "하나의 VPA: 같은 구조, 약 70 MB, 계산 단 5번, 저전력 소형 보드."
+  note: "지금까지의 결과는 시뮬레이션 결과입니다. 실물 로봇팔·드론 시험은 2027년 상반기 예정입니다."
+  forest: { camera: "카메라 시야", memory: "15초 기억", start: "출발", goal: "목적지" }
+
+compare:
+  id: "compare"
+  title: "경쟁 비교: 1/100 크기, 로봇·드론 겸용"
+  intro: "기존 로봇 AI는 거대 언어모델을 쓰거나, 드론이라면 지도부터 그린 뒤에야 길을 계산합니다. VPA는 둘 다 하지 않습니다."
+  head: ["구분", "두뇌 크기 (파라미터)", "필요 장비", "동작 만드는 법", "적용"]
+  rows:
+    - { name: "대형 로봇 AI", ex: "구글 등 빅테크 · LLM 기반", size: "33억 ~ 550억", hw: "고가 GPU", method: "말로 바꿔 생각", use: "로봇팔" }
+    - { name: "소형 로봇 AI", ex: "공개 소형 모델 · LLM 기반", size: "약 4.5억", hw: "일반 GPU·PC", method: "말로 바꿔 생각", use: "로봇팔" }
+    - { name: "지도 기반 자율비행", ex: "지도부터 그리는 전통 방식", size: "해당 없음", hw: "여러 센서", method: "지도 그린 뒤 길 계산", use: "드론" }
+  ours: { name: "SLING AI", ex: "VPA · Aero-VPA", size: "약 1,800만", hw: "저전력 소형 보드", method: "계산 5번, 즉시", use: "로봇팔 + 드론 (같은 구조)" }
+  points:
+    - { title: "초경량", text: "대형 로봇 AI의 1/100 이하" }
+    - { title: "빠른 반응", text: "항상 5번 계산으로 결정" }
+    - { title: "하나로 둘", text: "같은 구조로 로봇팔·드론 제어" }
+    - { title: "안전성", text: "안전장치로 드론 충돌 72% → 22%" }
+  footnote: "두뇌 크기: AI를 이루는 숫자(파라미터)의 개수, 공개 논문 기준 (구글 RT-2 최대 550억 · OpenVLA 70억 · π0 33억 · SmolVLA 4.5억)."
+
+business:
+  id: "business"
+  title: "사업 모델과 시장"
+  intro: "같은 VPA 소프트웨어로 두 가지 방식의 매출을 만듭니다."
+  models:
+    - name: "[수익 1] 현장 소프트웨어"
+      rows:
+        - { k: "고객", v: "공장·물류·드론 운용사" }
+        - { k: "가격", v: "<strong>아낀 인건비의 20%</strong>" }
+        - { k: "진행", v: "유료 PoC → 연간 이용료" }
+    - name: "[수익 2] 기술 사용료 (라이선스)"
+      rows:
+        - { k: "고객", v: "로봇·드론·칩 제조사" }
+        - { k: "가격", v: "제품 1대당 로열티" }
+        - { k: "진행", v: "무료 공개로 확산 → <strong>판매 제품에 넣으면 유료</strong>" }
+  market_title: "시장 규모"
+  market:
+    - { level: "전체 시장 · 세계", text: "로봇·AI 250조 원, 드론 592억 달러 (2032년 예상)" }
+    - { level: "공략 시장 · 국내", text: "스마트공장·로봇 11조 원, 드론 1.1조 원 (2023년)" }
+    - { level: "초기 목표 · 로봇 + 드론", text: "로봇: 물류·정밀제조 1조 원, 드론: 소프트웨어 1,634억 원 (2023년)" }
+  market_line: "하나의 VPA로 두 시장을 동시에 공략합니다."
+  market_source: "출처: 국토교통부 「2024 드론산업 실태조사」, IMARC"
+  why_now_title: "지금이 기회"
+  why_now: "로봇·드론 수요는 급증하고 있고, 고가 GPU가 보급의 걸림돌입니다."
+
+traction:
+  id: "traction"
+  title: "지금까지의 성과"
+  rows:
+    - k: "공공 검증"
+      v: "신용보증기금 보증 2억 원"
+      note: "혁신스타트업 협약보증 선정 (2026년 10월)"
+    - k: "기술 지표 (시뮬레이션)"
+      v: "로봇팔 집안일 성공률 40%, 드론 목적지 도달률 52%, 드론 무충돌 비행률 78%"
+    - k: "공개 AI 모델"
+      v: "2종, 모델·코드·데이터 무료 공개"
+      links:
+        - { label: "Hugging Face", key: "huggingface" }
+        - { label: "GitHub", key: "github" }
+    - k: "논문"
+      v: "3편 공개 (Zenodo), VPA 논문은 arXiv에도 공개"
+      links:
+        - { label: "Aero-VPA", key: "aero_paper" }
+        - { label: "VPA", key: "vpa_paper" }
+        - { label: "NS-JEPA", key: "nsjepa_paper" }
+        - { label: "arXiv", key: "vpa_arxiv" }
+    - k: "특허"
+      v: "등록 1건, VPA 핵심 기술 등 출원 다수"
+      links:
+        - { label: "특허 정보", key: "patent" }
+  updates_title: "최근 소식"
+  updates:
+    - { date: "2026.10", text: "신용보증기금 혁신스타트업 협약보증 선정 (2억 원)" }
+    - { date: "2026.10", text: "Aero-VPA 논문 공개 (Zenodo). 모델과 전체 벤치마크 비행기록은 Hugging Face에 공개" }
+    - { date: "2026.10", text: "VPA 논문 공개 (Zenodo, arXiv 2610.15556), LIBERO-10 모델 Hugging Face 공개" }
+    - { date: "2026.09", text: "NS-JEPA 논문 공개 (Zenodo)" }
+    - { date: "2026.02", text: "슬링에이아이 주식회사 설립 (인천)" }
+
+roadmap:
+  id: "roadmap"
+  title: "마일스톤"
+  items:
+    - { when: "2026", state: "완료", done: true, lines: ["시뮬레이션 검증 · 전면 공개", "신용보증기금 보증 2억 원"] }
+    - { when: "2027 상반기", lines: ["실제 로봇팔·드론 시험", "유료 PoC 1–2건"] }
+    - { when: "2027 하반기", lines: ["현장 적용 · 첫 사용료 계약", "정부 R&D(TIPS) 연계"] }
+    - { when: "2028", lines: ["로봇·드론 제조사로 확대", "시리즈 A 투자 유치"] }
+
+team:
+  id: "team"
+  title: "팀: 수학으로 검증하는 AI 제어 전문성"
+  intro: ""
+  ceo:
+    name: "이연석 대표이사"
+    role: "Dr. Yeonseok Lee · 정보학 박사"
+    degree: "나고야대학교 정보학 박사 (2026)"
+    photo_alt: "이연석 대표이사 사진"
+    bullets:
+      - "전공: 프로그램이 오류 없이 도는지 수학으로 증명"
+      - "국제학회 논문 등 3편"
+      - "VPA·Aero-VPA 직접 개발 (논문·코드 단독 저자)"
+      - "한양대 · 공군 정비사 · 日 NTT DATA 그룹"
+    links:
+      - { label: "박사논문 원본", key: "thesis" }
+      - { label: "예비 링크(미러)", key: "thesis_mirror" }
+      - { label: "LinkedIn", key: "linkedin" }
+    profile: { label: "전체 이력·논문 (영문)", url: "/representative.html" }
+  hiring_title: "채용 계획 (투자 후 12개월)"
+  hiring:
+    - "로봇·드론 탑재 엔지니어 1명"
+    - "AI 학습·제어 엔지니어 1명"
+  vision_title: "비전"
+  vision: "모든 로봇과 드론을 움직이는 하나의 가벼운 두뇌"
+  quote: "이론적 엄밀함과 현장 실무 경험의 결합을 통한 AI 제어 기술 혁신"
+
+company:
+  id: "company"
+  title: "회사 정보와 연락처"
+  labels:
+    name: "회사명"
+    ceo: "대표이사"
+    founded: "설립일"
+    brn: "사업자등록번호"
+    crn: "법인등록번호"
+    address: "주소"
+    email: "이메일"
+    phone: "전화"
+  contact_title: "문의하기"
+  contact_text: "유료 PoC, 기술 사용료(라이선스), 투자 관련 문의를 받습니다."
+  contact_button: "ylee@sling.ai.kr 로 메일 보내기"
+  details: { label: "회사 정보 상세 (영문)", url: "/company.html" }
+
+footer:
+  pages_title: "페이지"
+  pages:
+    - { label: "로봇팔용 VPA (영문)", url: "/solutions_vpa.html" }
+    - { label: "드론용 Aero-VPA (영문)", url: "/aero_vpa.html" }
+    - { label: "제품과 연구 (영문)", url: "/solutions.html" }
+    - { label: "대표 이력 (영문)", url: "/representative.html" }
+    - { label: "회사 정보 (영문)", url: "/company.html" }
+  elsewhere_title: "외부 링크"
+  elsewhere:
+    - { label: "Hugging Face", key: "huggingface" }
+    - { label: "GitHub", key: "github" }
+    - { label: "LinkedIn", key: "linkedin" }
+  rights: "© 2026 슬링에이아이 주식회사"

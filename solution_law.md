@@ -1,12 +1,15 @@
 ---
-title: Legaltech Solutions
-parent: Solutions
-layout: default
-nav_order: 4
+title: "Legal reasoning verification"
+heading: "Neuro-symbolic AI for summary proceedings"
+seo_title: "Legal reasoning verification | SLING AI"
+description: >-
+  SLING AI research: an LLM extracts facts from legal records and an SMT logic engine computes sentencing ranges and drafts summary indictments. Patent application filed.
+lede: >-
+  Research that pairs a language model for reading records with a logic engine for the rule-based calculations.
+crumbs:
+  - { label: "Products and research", url: "/solutions.html" }
 ---
-
-# Neuro-Symbolic AI for Summary Proceeding Automation
-{: .fs-9 }
+<div class="note"><p><strong>Research track.</strong> This is formal-verification research from SLING AI and the basis of part of our patent portfolio. It is not a current product line; our products are <a href="{{ '/solutions_vpa.html' | relative_url }}">VPA for robot arms</a> and <a href="{{ '/aero_vpa.html' | relative_url }}">Aero-VPA for drones</a>.</p></div>
 
 Processing high-volume minor traffic offenses—such as simple DUIs, unlicensed driving, and minor traffic casualties—creates a significant administrative burden for prosecutors and judicial personnel. While standard Large Language Models (LLMs) are effective at processing natural language text, they rely on probabilistic predictions and can produce errors ("hallucinations") when calculating fine ranges or applying explicit statutory rules. In legal contexts, where accuracy and accountability are critical, relying solely on probabilistic models presents challenges.  
 

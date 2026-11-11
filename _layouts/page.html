@@ -1,0 +1,27 @@
+---
+layout: base
+---
+{%- assign t = site.data.home[page.lang] | default: site.data.home.en -%}
+<div class="page-head">
+  <div class="wrap">
+    {%- if page.crumbs %}
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        {%- for c in page.crumbs %}
+        <li><a href="{{ c.url | relative_url }}">{{ c.label }}</a></li>
+        {%- endfor %}
+      </ol>
+    </nav>
+    {%- endif %}
+    <h1>{{ page.heading | default: page.title }}</h1>
+    {%- if page.lede %}
+    <p class="page-head__lede">{{ page.lede }}</p>
+    {%- endif %}
+  </div>
+</div>
+<div class="wrap page-body">
+  <article class="prose{% if page.wide %} prose--wide{% endif %}">
+{{ content }}
+  </article>
+</div>

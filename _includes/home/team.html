@@ -1,0 +1,44 @@
+{%- assign tm = t.team -%}
+{%- assign ceo = tm.ceo -%}
+<section class="section" id="{{ tm.id }}" aria-labelledby="{{ tm.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ tm.id }}-title">{{ tm.title }}</h2>
+      {%- if tm.intro != "" %}
+      <p>{{ tm.intro }}</p>
+      {%- endif %}
+    </div>
+    <div class="team">
+      <article class="person">
+        <img class="person__photo" src="{{ '/assets/images/ceo_pic_600.jpg' | relative_url }}" alt="{{ ceo.photo_alt }}" width="600" height="771" loading="lazy">
+        <div class="person__body">
+          <h3>{{ ceo.name }}</h3>
+          <p class="person__role">{{ ceo.role }}</p>
+          <p class="person__degree">{{ ceo.degree }}</p>
+          <ul class="ticks">
+            {%- for item in ceo.bullets %}
+            <li>{{ item }}</li>
+            {%- endfor %}
+          </ul>
+          <p class="person__links">
+            {%- for l in ceo.links %}
+            <a href="{{ site.data.links[l.key] }}">{{ l.label }}</a>
+            {%- endfor %}
+          </p>
+          <p class="person__more"><a class="button button--small" href="{{ ceo.profile.url | relative_url }}">{{ ceo.profile.label }}</a></p>
+        </div>
+      </article>
+      <aside class="team__side">
+        <h3>{{ tm.hiring_title }}</h3>
+        <ul class="ticks">
+          {%- for item in tm.hiring %}
+          <li>{{ item }}</li>
+          {%- endfor %}
+        </ul>
+        <h3>{{ tm.vision_title }}</h3>
+        <p class="vision">{{ tm.vision }}</p>
+      </aside>
+    </div>
+    <blockquote class="quote"><p>“{{ tm.quote }}”</p></blockquote>
+  </div>
+</section>

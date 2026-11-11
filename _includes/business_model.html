@@ -1,34 +1,21 @@
-<div class="sl-section" id="business-model">
-  <p class="sl-kicker">Business model</p>
-  <h2 class="sl-h2">Embodied AI-as-a-Service: two revenue paths, one flywheel</h2>
-  <div class="sl-grid sl-grid--2">
-    <div class="sl-card">
-      <span class="sl-step">Edge</span>
-      <h3>Edge Runtime Software</h3>
-      <p>
-        The high-frequency VPA runtime engine, licensed to <strong>robot OEMs</strong> and
-        <strong>factory-automation builders</strong>. It runs on the robot's own edge chip, needs no
-        cloud round-trip in the control loop, and fits in under 75&nbsp;MB.
-      </p>
-      <ul class="sl-list">
-        <li>Per-robot or per-deployment runtime license</li>
-        <li>Integration support for custom arms, grippers, and camera rigs</li>
-        <li>Task-specific fine-tuning on the customer's demonstrations</li>
-      </ul>
+{%- comment -%}
+  Business model block for the technical pages. Text comes from the English
+  home page data (_data/home/en.yml, business.models) so it never drifts.
+{%- endcomment -%}
+{%- assign b = site.data.home.en.business -%}
+<section id="business-model">
+  <h2>How customers use it</h2>
+  <div class="panels">
+    {%- for m in b.models %}
+    <div class="panel">
+      <h3>{{ m.name }}</h3>
+      <dl class="model__rows">
+        {%- for r in m.rows %}
+        <dt>{{ r.k }}</dt>
+        <dd>{{ r.v }}</dd>
+        {%- endfor %}
+      </dl>
     </div>
-    <div class="sl-card">
-      <span class="sl-step">Cloud</span>
-      <h3>Cloud Fleet Management &amp; Continuous Learning</h3>
-      <p>
-        A subscription service that turns every field failure into a better model for the whole fleet:
-      </p>
-      <ol class="sl-loop">
-        <li><strong>Capture</strong> edge-case failures on deployed robots</li>
-        <li><strong>Upload</strong> the episode to the cloud</li>
-        <li><strong>Simulate</strong> it across thousands of synthetic variations</li>
-        <li><strong>Retrain</strong> the VPA policy on the expanded data</li>
-        <li><strong>Redeploy</strong> over-the-air (OTA) to every robot</li>
-      </ol>
-    </div>
+    {%- endfor %}
   </div>
-</div>
+</section>

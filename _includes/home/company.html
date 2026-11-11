@@ -1,0 +1,34 @@
+{%- assign co = t.company -%}
+{%- assign c = site.data.company -%}
+{%- assign tel = c.phone | remove: " " | remove: "-" -%}
+<section class="section section--mist" id="{{ co.id }}" aria-labelledby="{{ co.id }}-title">
+  <div class="wrap company">
+    <div>
+      <h2 id="{{ co.id }}-title">{{ co.title }}</h2>
+      <dl class="spec">
+        <dt>{{ co.labels.name }}</dt>
+        <dd>{{ c.name }} ({{ c.name_ko }})</dd>
+        <dt>{{ co.labels.ceo }}</dt>
+        <dd>{% if page.lang == "ko" %}{{ c.ceo_ko }}{% else %}{{ c.ceo_en }}{% endif %}</dd>
+        <dt>{{ co.labels.founded }}</dt>
+        <dd>{% if page.lang == "ko" %}{{ c.founded_ko }}{% else %}{{ c.founded_en }}{% endif %}</dd>
+        <dt>{{ co.labels.brn }}</dt>
+        <dd>{{ c.business_registration }}</dd>
+        <dt>{{ co.labels.crn }}</dt>
+        <dd>{{ c.corporate_registration }}</dd>
+        <dt>{{ co.labels.address }}</dt>
+        <dd>{% if page.lang == "ko" %}{{ c.address_ko }}<small>{{ c.office_ko }}</small>{% else %}{{ c.address_en }}<small>{{ c.office_en }}</small>{% endif %}</dd>
+        <dt>{{ co.labels.email }}</dt>
+        <dd><a href="mailto:{{ c.email }}">{{ c.email }}</a></dd>
+        <dt>{{ co.labels.phone }}</dt>
+        <dd><a href="tel:{{ tel }}">{{ c.phone }}</a></dd>
+      </dl>
+      <p class="company__more"><a href="{{ co.details.url | relative_url }}">{{ co.details.label }}</a></p>
+    </div>
+    <aside class="contact-box">
+      <h3>{{ co.contact_title }}</h3>
+      <p>{{ co.contact_text }}</p>
+      <a class="button button--signal" href="mailto:{{ c.email }}?subject={{ t.hero.secondary.subject | uri_escape }}">{{ co.contact_button }}</a>
+    </aside>
+  </div>
+</section>

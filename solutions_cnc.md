@@ -1,12 +1,15 @@
 ---
-title: CNC Solutions
-parent: Solutions
-layout: default
-nav_order: 2
+title: "CNC toolpath verification"
+heading: "Formal verification of CNC toolpaths with separation logic"
+seo_title: "CNC toolpath verification | SLING AI"
+description: >-
+  SLING AI research: separation-logic verification that G-code toolpaths cannot collide with fixtures or prohibited zones, and LLM G-code generation corrected until it is provably safe. Registered Korean patent.
+lede: >-
+  Research that proves, before the machine moves, that a G-code toolpath cannot hit a fixture or enter a prohibited zone.
+crumbs:
+  - { label: "Products and research", url: "/solutions.html" }
 ---
-
-# Formal Verification of CNC Trajectories via Separation Logic
-{: .fs-9 }
+<div class="note"><p><strong>Research track.</strong> This is formal-verification research from SLING AI and the basis of part of our patent portfolio. It is not a current product line; our products are <a href="{{ '/solutions_vpa.html' | relative_url }}">VPA for robot arms</a> and <a href="{{ '/aero_vpa.html' | relative_url }}">Aero-VPA for drones</a>.</p></div>
 
 Traditional geometric simulations used for safety verification can be computationally expensive, require repetitive testing when requirements change, and often lack formal safety guarantees. SLING AI provides a formal verification framework that conceptualizes the physical CNC workspace as a "Spatial Heap," treating physical occupancy as a managed logical memory resource.
 
@@ -16,7 +19,7 @@ Our solutions are based on original research and patent-pending architectures:
 * **Separation Logic-based G-code Collision Pre-verification**
   * **The Tech**: A framework that verifies toolpaths do not overlap with prohibited zones by applying Separation Logic to G-code analysis.
   * **Status**: 
-    * Korean Patent Application Filed (Feb 2026, App No. [10-2026-0033761](https://doi.org/10.8080/1020260033761); Under Examination)
+    * Registered Korean patent (application no. [10-2026-0033761](https://doi.org/10.8080/1020260033761), filed Feb 2026)
     * Subsequent Korean Patent Application Filed (May 2026, App No. 10-2026-0080180; Provisional Specification)
     * Subsequent Korean Patent Application Filed (May 2026, App No. 10-2026-0088912; Provisional Specification)
   * **Paper**: [Preprint (DOI): 10.48550/arXiv.2605.10437](https://doi.org/10.48550/arXiv.2605.10437)
@@ -57,8 +60,7 @@ Our solutions are based on original research and patent-pending architectures:
 
 ---
 
-## Correct-by-Construction Neuro-Symbolic G-Code Generation
-{: .fs-8 }
+## Correct-by-construction neuro-symbolic G-code generation
 
 While Large Language Models (LLMs) offer significant potential for automating code synthesis, applying them directly to cyber-physical systems introduces operational risks due to spatial hallucinations and a lack of formal safety guarantees. SLING AI addresses this challenge with a two-way neuro-symbolic architecture that combines the generative capabilities of LLMs with the formal verification of a Separation Logic prover.
 

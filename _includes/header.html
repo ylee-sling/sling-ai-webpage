@@ -1,0 +1,20 @@
+{%- assign t = site.data.home[page.lang] | default: site.data.home.en -%}
+{%- assign home = t.ui.home_url | relative_url -%}
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="site-header__logo" href="{{ home }}">
+      <img src="{{ '/assets/images/company_logo.png' | relative_url }}" alt="SLING AI Inc." width="98" height="36">
+    </a>
+    <nav class="site-nav" aria-label="{{ t.ui.nav_label }}">
+      <ul>
+        {%- for item in t.nav %}
+        <li><a href="{{ home }}#{{ item.id }}">{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="lang-link" href="{{ t.ui.lang_switch_url | relative_url }}" hreflang="{{ t.ui.lang_switch_code }}" lang="{{ t.ui.lang_switch_code }}">{{ t.ui.lang_switch_label }}</a>
+      <a class="button button--primary button--small" href="mailto:{{ site.data.company.email }}">{{ t.ui.contact }}</a>
+    </div>
+  </div>
+</header>

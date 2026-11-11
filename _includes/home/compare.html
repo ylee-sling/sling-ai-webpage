@@ -1,0 +1,47 @@
+{%- assign cp = t.compare -%}
+<section class="section" id="{{ cp.id }}" aria-labelledby="{{ cp.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ cp.id }}-title">{{ cp.title }}</h2>
+      <p>{{ cp.intro }}</p>
+    </div>
+    <div class="table-scroll" role="region" aria-labelledby="{{ cp.id }}-title" tabindex="0">
+      <table class="compare">
+        <thead>
+          <tr>
+            {%- for h in cp.head %}
+            <th scope="col">{{ h }}</th>
+            {%- endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for r in cp.rows %}
+          <tr>
+            <th scope="row"><strong>{{ r.name }}</strong><span>{{ r.ex }}</span></th>
+            <td>{{ r.size }}</td>
+            <td>{{ r.hw }}</td>
+            <td>{{ r.method }}</td>
+            <td>{{ r.use }}</td>
+          </tr>
+          {%- endfor %}
+          <tr class="compare__ours">
+            <th scope="row"><strong>{{ cp.ours.name }}</strong><span>{{ cp.ours.ex }}</span></th>
+            <td class="compare__size">{{ cp.ours.size }}</td>
+            <td>{{ cp.ours.hw }}</td>
+            <td>{{ cp.ours.method }}</td>
+            <td>{{ cp.ours.use }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="points">
+      {%- for pt in cp.points %}
+      <li>
+        <h3>{{ pt.title }}</h3>
+        <p>{{ pt.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="footnote">{{ cp.footnote }}</p>
+  </div>
+</section>

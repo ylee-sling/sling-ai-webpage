@@ -1,0 +1,20 @@
+{%- assign rm = t.roadmap -%}
+<section class="section section--mist" id="{{ rm.id }}" aria-labelledby="{{ rm.id }}-title">
+  <div class="wrap">
+    <div class="section__head">
+      <h2 id="{{ rm.id }}-title">{{ rm.title }}</h2>
+    </div>
+    <ol class="roadmap">
+      {%- for it in rm.items %}
+      <li class="roadmap__item{% if it.done %} roadmap__item--done{% endif %}{% if forloop.last %} roadmap__item--last{% endif %}">
+        <p class="roadmap__when">{{ it.when }}{% if it.done %}<span class="roadmap__state">{{ it.state }}</span>{% endif %}</p>
+        <ul class="ticks">
+          {%- for line in it.lines %}
+          <li>{{ line }}</li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
