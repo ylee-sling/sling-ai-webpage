@@ -4,7 +4,7 @@
 <footer class="site-footer">
   <div class="wrap site-footer__inner">
     <div class="site-footer__brand">
-      <img src="{{ '/assets/images/company_logo.png' | relative_url }}" alt="SLING AI Inc." width="131" height="48" loading="lazy">
+      <img src="{{ '/assets/images/company_logo.png' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" alt="SLING AI Inc." width="133" height="48" loading="lazy">
       <p class="motto"><b>S</b>ymbolic <b>L</b>ogic <b>I</b>nspires <b>N</b>ormal and <b>G</b>eneral AI</p>
       <p class="site-footer__contact">
         <a href="mailto:{{ c.email }}">{{ c.email }}</a><br>
