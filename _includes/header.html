@@ -3,7 +3,7 @@
 <header class="site-header">
   <div class="wrap site-header__inner">
     <a class="site-header__logo" href="{{ home }}">
-      <img src="{{ '/assets/images/company_logo.png' | relative_url }}" alt="SLING AI Inc." width="98" height="36">
+      <img src="{{ '/assets/images/company_logo.png' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}" alt="SLING AI Inc." width="99" height="36">
     </a>
     <nav class="site-nav" aria-label="{{ t.ui.nav_label }}">
       <ul>
